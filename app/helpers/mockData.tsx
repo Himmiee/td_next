@@ -19,6 +19,10 @@ import communityImg from "@/app/assets/png/icons/communitysupport.png";
 import productImg from "@/app/assets/png/productdesign.png";
 import uiuxImg from "@/app/assets/png/uiux.png";
 import analyticsIng from "@/app/assets/png/analyics.png";
+import imgOne from "@/app/assets/png/img-one.png";
+import imgTwo from "@/app/assets/png/imgg-two.png";
+import imgThree from "@/app/assets/png/img-three.png";
+import imgFour from "@/app/assets/png/img-four.png";
 
 interface MockDataItem {
   icon: ReactNode;
@@ -152,7 +156,11 @@ export const coursesData = [
   },
 ];
 
-export const bulletPoints = ["Product Management", "UX/UI Design", "Data Analytics"];
+export const bulletPoints = [
+  "Product Management",
+  "UX/UI Design",
+  "Data Analytics",
+];
 export const accordionItems = [
   {
     title: "What kind of support can I expect from instructors?",
@@ -183,5 +191,38 @@ export const accordionItems = [
     title: "How much do the courses cost?",
     content:
       "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+  },
+];
+
+export const whyTdData = [
+  {
+    icon: imgOne,
+    title: "Learn In-Demand Skills",
+    description:
+      "Master Coding and non-coding tech skills designed for today's job market.",
+    btnText: "View Courses",
+    color: "#FEF6D6",
+  },
+  {
+    icon: imgTwo,
+    title: "Affordable and Flexible Learning",
+    description:
+      "Access courses that fit your schedule and budget without compromising quality.",
+    color: "#EFE6F2",
+  },
+  {
+    icon: imgThree,
+    title: "Career Guidance & Support",
+    description:
+      "Get tailored career quizzes, mentorship, and resume-building to make your journey easier.",
+    color: "#FEF6D6",
+  },
+  {
+    icon: imgFour,
+    title: "Tech-Focused Community",
+    description:
+      "Join a network of learners, professionals, and entrepreneurs passionate about tech and growth.",
+    btnText: "Join the community",
+    color: "#EFE6F2",
   },
 ];
