@@ -5,7 +5,7 @@ import { useFormContext } from "react-hook-form";
 import { InputContainer } from "./InputContainer";
 // import logoSm from "@/public/images/icon-sm.svg";
 import classnames from "classnames";
-import Image from "next/image";
+// import Image from "next/image";
 
 interface PhoneInputProps {
   name: string;

@@ -1,4 +1,4 @@
-import { CustomInfoCard, InfoCard } from "@/components/forms/cards/formcard";
+import { CustomInfoCard } from "@/components/forms/cards/formcard";
 import { ourServicesData } from "@/app/helpers/mockData";
 
 export const TechDiveServiceComponent = () => {

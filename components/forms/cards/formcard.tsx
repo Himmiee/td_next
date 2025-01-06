@@ -26,7 +26,9 @@ const IconWrapper = ({
       />
     );
   }
-  return <span className="text-[#9051A1] text-2xl">{icon as any}</span>;
+  return (
+    <span className="text-[#9051A1] text-2xl">{icon as React.ReactNode}</span>
+  );
 };
 
 export const InfoCard = ({ icon, title, description }: IconProps) => {
