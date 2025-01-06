@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const HomeHeroSection = () => {
   return (
-    <main className="xl:h-[70vh] 3xl:max-w-screen-3xl mx-auto px-4">
+    <main className="xl:h-[680px] 3xl:max-w-screen-3xl mx-auto px-8">
       {" "}
       <section className="relative py-10 pb-24 xl:pb-[80px] xl:py-[80px] grid grid-cols-1 xl:grid-cols-2  justify-items-center space-y-6 xl:space-y-0">
         {/* Left Side */}

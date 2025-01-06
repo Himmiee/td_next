@@ -151,3 +151,37 @@ export const coursesData = [
     description: "Gain insights and make data-driven decisions.",
   },
 ];
+
+export const bulletPoints = ["Product Management", "UX/UI Design", "Data Analytics"];
+export const accordionItems = [
+  {
+    title: "What kind of support can I expect from instructors?",
+    content:
+      "Synergyy is Africa’s Talent Cloud, connecting startups and businesses with elite African tech talent. We handle everything from talent acquisition and management to payroll, making it seamless for companies to hire top professionals across borders and focus on growth.",
+  },
+  {
+    title: "How do I Enrol in a course?",
+    content:
+      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
+  },
+  {
+    title: "How long do the courses take?",
+    content:
+      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+  },
+  {
+    title: "Will I get a certificate after completing a course?",
+    content:
+      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
+  },
+  {
+    title: "Do you offer job placement assistance?",
+    content:
+      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
+  },
+  {
+    title: "How much do the courses cost?",
+    content:
+      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+  },
+];

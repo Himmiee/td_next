@@ -1,3 +1,4 @@
+import { FAQComponent } from "./Faq";
 import { HomeHeroSection } from "./HomeHero";
 import { CoursesSection, DiveSection } from "./OurCourses";
 import { TechDiveServiceComponent } from "./OurServices";
@@ -11,6 +12,7 @@ export const HomeComponent = () => {
       <TechDiveServiceComponent />
       <CoursesSection />
       <DiveSection />
+      <FAQComponent />
     </section>
   );
 };

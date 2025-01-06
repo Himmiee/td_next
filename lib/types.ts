@@ -38,3 +38,8 @@ export type InputVariant =
   | "link"
   | "danger"
   | "outline";
+  
+export interface AccordionItem {
+  title: string;
+  content: string;
+}

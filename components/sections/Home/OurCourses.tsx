@@ -30,6 +30,8 @@ export const CoursesSection = () => {
   );
 };
 
+
+
 export const DiveSection = () => {
   return (
     <main className="h-96 3xl:max-w-screen-3xl mx-auto px-4 flex flex-col items-center justify-center space-y-6 bg-YellowBtnColor">
