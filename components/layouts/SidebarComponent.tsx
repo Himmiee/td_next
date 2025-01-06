@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { AiOutlineClose } from "react-icons/ai";
-import { GoArrowRight } from "react-icons/go";
 import smallImg from "../../app/assets/png/L.png";
 import { Button } from "../ui/button";
 import { NavData } from "@/app/helpers/mockData";
@@ -56,26 +55,13 @@ const SidebarComponent = ({ isMenuOpen, toggleMenu }: SidebarProps) => {
             <Button
               variant={"default"}
               size="lg"
-              className="text-base"
+              className="text-base bg-YellowBtnColor border border-YellowBtnColor"
               onClick={() => {
                 toggleMenu();
-                router.push("/Waitlist");
+                router.push("/");
               }}
             >
-              Get Early Access
-            </Button>
-            <Button
-              size="lg"
-              className="text-base"
-              onClick={() => {
-                toggleMenu();
-                router.push("/Waitlist");
-              }}
-            >
-              Our Solutions
-              <div className="animate-pulse">
-                <GoArrowRight className="ml-1" />
-              </div>
+              Get Started
             </Button>
           </div>
         </nav>
