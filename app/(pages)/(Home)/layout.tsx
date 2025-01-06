@@ -10,7 +10,7 @@ const MainLayout = ({ children }: Props) => {
     <main className="overflow-x-hidden">
       <HeaderComponent showBtn />
 
-      <div>{children}</div>
+      <div className="bg-[#f9f7f5]">{children}</div>
 
       <FooterComponent />
     </main>

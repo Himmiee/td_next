@@ -50,8 +50,12 @@ export const FooterComponent = () => {
           variants={containerVariants}
         >
           {/* Logo */}
-          <motion.div variants={itemVariants}>
+          <motion.div
+            className="cursor-pointer flex font-medium items-center justify-center gap-3 text-white"
+            variants={itemVariants}
+          >
             <Image src={logo} alt="Patnerd logo" />
+            <p>Tech Dive Africa</p>
           </motion.div>
 
           {/* Footer links */}

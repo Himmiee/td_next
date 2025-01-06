@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import img from "../../app/assets/png/L.png";
 import { Button } from "../ui/button";
 import { NavData } from "@/app/helpers/mockData";
@@ -83,7 +83,7 @@ export const HeaderComponent = ({ showBtn = true }: HeaderProps) => {
           animate={{ y: 0 }}
           exit={{ y: -100 }}
           transition={{ duration: 0.3 }}
-          className="w-full fixed top-0 left-0 right-0 z-50 bg-white"
+          className="w-full fixed top-0 left-0 right-0 z-50 bg-[#f9f7f5]"
         >
           <motion.div
             initial="initial"
@@ -153,7 +153,7 @@ export const HeaderComponent = ({ showBtn = true }: HeaderProps) => {
                     whileTap={{ scale: 0.95 }}
                     className="xl:hidden"
                   >
-                    <RxHamburgerMenu size={30} onClick={toggleMenu} />
+                    <HiOutlineMenuAlt1 size={30} onClick={toggleMenu} />
                   </motion.div>
                 </>
               )}
