@@ -3,9 +3,9 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useFormContext } from "react-hook-form";
 import { InputContainer } from "./InputContainer";
-// import logoSm from "@/public/images/icon-sm.svg";
+import logoSm from "@/public/images/icon-sm.svg";
 import classnames from "classnames";
-// import Image from "next/image";
+import Image from "next/image";
 
 interface PhoneInputProps {
   name: string;
@@ -57,11 +57,11 @@ const PhoneInputField: React.FC<PhoneInputProps> = ({
             }),
           }}
         />
-        {/* <Image
+        <Image
           src={logoSm} 
           alt="Custom Logo Small"
           className="absolute left-10 top-[51%] transform -translate-y-1/2 w-[10px] h-[10px] pointer-events-none"
-        /> */}
+        />
       </div>
     </InputContainer>
   );

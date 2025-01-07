@@ -38,3 +38,37 @@ export const QuestionCard = () => {
     </div>
   );
 };
+
+
+export const GeneralSectionCard = ({
+  children,
+  customClasses = "",
+  additionalStyles = {},
+  color = "customBlue",
+  isFullWidth = false, // New prop to determine the layout style
+}: {
+  children: React.ReactNode;
+  customClasses?: string;
+  additionalStyles?: React.CSSProperties;
+  color?: string;
+  isFullWidth?: boolean; // New boolean prop
+}) => {
+  return (
+    <section
+      className={`${
+        isFullWidth
+          ? `3xl:max-w-screen-3xl mx-auto px-6 xl:px-12 flex items-center justify-center ${customClasses} ${color}`
+          : `${color} w-full flex items-center justify-center ${customClasses}`
+      }`}
+      style={additionalStyles}
+    >
+      {isFullWidth ? (
+        children
+      ) : (
+        <div className="3xl:max-w-screen-3xl mx-auto px-6 xl:px-12 flex items-center justify-center">
+          {children}
+        </div>
+      )}
+    </section>
+  );
+};

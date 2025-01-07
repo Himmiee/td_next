@@ -14,6 +14,56 @@
   }
 } */
 
-body {
+.custom-phone-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 2px solid #dfe6e8;
+  background-color: #f9feff;
+}
 
+.custom-phone-input:focus-within {
+  outline: none;
+  border-color: #015ecc;
+  /* box-shadow: 0 0 0 1px #015ecc; */
+}
+
+/* Adjust width and centering for the flag container */
+.custom-phone-input .flag-dropdown {
+  width: 60px; /* Increased width for the flag container */
+  background-color: #0710120d !important;
+  /* border-right: 2px solid #dfe6e8 !important;
+  border-left: none !important; */
+  border: none !important;
+  /* border-bottom: none !important; */
+  padding: 0 14px 0 0 !important;
+  border-top-left-radius: 12% !important;
+  border-bottom-left-radius: 12% !important;
+}
+
+.custom-phone-input .selected-flag {
+  background-color: transparent !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-phone-input .selected-flag:hover {
+  background-color: transparent !important;
+}
+
+.custom-phone-input .form-control {
+  background-color: transparent !important;
+  border: none !important;
+  color: #000;
+  flex-grow: 1;
+  width: 45px;
+  padding: 0.5rem 4.5rem !important;
+  height: 100%;
+  border-radius: 0;
+}
+
+.custom-phone-input .selected-flag .arrow {
+  display: none;
 }
