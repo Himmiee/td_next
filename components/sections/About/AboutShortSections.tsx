@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import img from "@/app/assets/png/logo-lg.png";
 import imgu from "@/app/assets/png/Avatar.png";
