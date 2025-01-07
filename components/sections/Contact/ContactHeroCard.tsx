@@ -17,7 +17,7 @@ export const ContactHeroSection = () => {
   return (
     <GeneralSectionCard
       isFullWidth
-      customClasses="xl:min-h-screen pt-40 relative xl:py-32"
+      customClasses="xl:min-h-[800px] pt-40 relative xl:py-32"
     >
       <div className="w-full grid xl:grid-cols-2 gap-x-8 gap-y-6 xl:gap-y-0 xl:px-6 lg:px-14">
         {/* Left side with heading */}

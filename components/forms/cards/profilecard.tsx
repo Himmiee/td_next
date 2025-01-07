@@ -49,16 +49,14 @@ export const TeamProfileCard: React.FC<TeamProfileCardProps> = ({
 
           {/* Hover Description (Visible on small to lg screens) */}
           <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 xl:hidden">
-            <h2 className="text-xl font-semibold">{name}</h2>
-            <p className="text-sm">{role}</p>
             <p className="text-sm mt-2">{description}</p>
           </div>
         </div>
       </div>
 
       {/* Text Content Section for Large Screens */}
-      <div className="flex-1 space-y-4 max-w-4xl xl:hidden">
-        <div>
+      <div className="flex-1 space-y-4 w-full xl:hidden">
+        <div className=" w-full flex justify-center items-center flex-col space-y-2">
           <h2 className="text-3xl font-semibold mb-1">{name}</h2>
           <p className="text-gray-600 text-lg">{role}</p>
         </div>
