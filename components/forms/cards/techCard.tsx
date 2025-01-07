@@ -10,6 +10,7 @@ interface TechDiveCardProps {
   color: string;
   btnText?: string;
   isReversed?: boolean;
+  heightClass?: string; 
 }
 
 export const TechDiveCard = ({
@@ -19,6 +20,7 @@ export const TechDiveCard = ({
   color,
   btnText,
   isReversed,
+  heightClass = "h-[50vh] xl:h-[720px]", 
 }: TechDiveCardProps) => {
   return (
     <section
@@ -33,8 +35,10 @@ export const TechDiveCard = ({
         }`}
       >
         {/* Image Container */}
-        <div className="w-full xl:w-1/2 flex justify-center items-center">
-          <div className="relative w-full h-[50vh] lg:h-[720px]">
+        <div
+          className={`w-full xl:w-1/2 flex justify-center items-center ${heightClass}`}
+        >
+          <div className="relative w-full h-full">
             <Image
               src={imageSrc}
               alt={title}
@@ -47,15 +51,17 @@ export const TechDiveCard = ({
         </div>
 
         {/* Text Container */}
-        <div className="w-full xl:w-1/2 flex flex-col justify-center items-center  h-[50vh]  lg:h-[720px] space-y-4 px-4 xl:px-0 ">
-          <div className="text-customBlue font-semibold  text-center text-[32px]  max-w-[280px]">
+        <div
+          className={`w-full xl:w-1/2 flex flex-col justify-center items-center space-y-4 px-4 xl:px-0 ${heightClass}`}
+        >
+          <div className="text-customBlue font-semibold text-center text-[32px] max-w-[280px]">
             {title}
           </div>
-          <p className="text-sm xl:text-[16px]  leading-[1.8] text-center  max-w-[330px]">
+          <p className="text-sm xl:text-[16px] leading-[1.8] text-center max-w-[330px]">
             {description}
           </p>
           {btnText && (
-            <Button className="bg-black text-white  max-w-[280px]">
+            <Button className="bg-black text-white max-w-[280px]">
               {btnText}
             </Button>
           )}

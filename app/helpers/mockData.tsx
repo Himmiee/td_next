@@ -23,6 +23,11 @@ import imgOne from "@/app/assets/png/img-one.png";
 import imgTwo from "@/app/assets/png/imgg-two.png";
 import imgThree from "@/app/assets/png/img-three.png";
 import imgFour from "@/app/assets/png/img-four.png";
+import imageOne from "@/app/assets/png/about/image-1.png";
+import imageTwo from "@/app/assets/png/about/image-2.png";
+import imageThree from "@/app/assets/png/about/image-3.png";
+import imageFour from "@/app/assets/png/about/image-4.png";
+import { StaticImageData } from "next/image";
 
 interface MockDataItem {
   icon: ReactNode;
@@ -226,3 +231,59 @@ export const whyTdData = [
     color: "#EFE6F2",
   },
 ];
+
+export const ourMissionData = [
+  {
+    icon: imgFour,
+    title: "Our Mission",
+    description:
+      "We aim to equip women with practical skills, connect them with industry experts, and foster a thriving community that supports career growth and innovation.",
+    color: "#EFE6F2",
+  },
+];
+interface TeamMember {
+  name: string;
+  role: string;
+  description: string;
+  imageUrl: StaticImageData;
+}
+
+
+ export  const teamMembers: TeamMember[] = [
+   {
+     name: "Esther Daniels",
+     role: "Founder",
+     description: `Esther Daniels is an accomplished Product Manager with over five years of experience across diverse industries, including education, healthcare, dating apps, and travel. As an advocate for users, she excels at iterative problem-solving, brainstorming and driving continuous value creation in every product she manages.
+
+      Esther has collaborated with renowned organizations such as Meta, GIZ, and Project1, showcasing her ability to deliver impactful solutions on a global scale. She holds certifications as a Scrum Master (Scrum.org) and Scrum Product Owner, equipping her with the skills to lead agile teams effectively.
+
+      As the founder of Tech Dive and its Lead Product Manager, Esther combines her expertise with a passion for empowering others. She is dedicated to helping aspiring professionals transition into tech and achieve success in their careers.`,
+     imageUrl: imageOne,
+   },
+   {
+     name: "Naomi Destiny",
+     role: "Director of Operations",
+     description: `Naomi Destiny is a seasoned Management Professional and Marketing & Communications Specialist with a passion for driving innovation and digital transformation. With her expertise in crafting impactful strategies and managing organizational growth, Naomi oversees the seamless execution of operations at Tech Dive.
+
+      As the Director of Operations, Naomi leads the charge in optimizing processes, building the school’s brand, and expanding its reach. Her strategic insight ensures that Tech Dive's offerings align with the latest trends in education and technology, creating a dynamic and transformative experience for students worldwide.
+`,
+     imageUrl: imageTwo,
+   },
+   {
+     name: "Fii (Michael) Stephen",
+     role: "Director of Academy",
+     description: `Fii (Michael) Stephen is a Senior Growth & Product Marketing Manager with extensive expertise in performance marketing, data science, and AI-driven solutions. As an AI Consultant and Prompt Engineer, Fii combines cutting-edge technology with innovative strategies to drive growth and optimize outcomes.
+
+      At Tech Dive, Fii leads as the Director of Academy, leveraging data-driven insights to enhance student learning experiences, design scalable education solutions, and position Tech Dive as a leader in tech education. His forward-thinking approach ensures that Tech Dive's programs remain innovative, impactful, and aligned with the latest industry trends.`,
+     imageUrl: imageThree,
+   },
+   {
+     name: "Precious Amadi",
+     role: "Creative Course Director",
+     description: `Precious Chika Amadi is a seasoned social media strategist and entrepreneur. As Founder/CEO of Social Media Guru, she leads a strong team to empower businesses with data-driven strategies and expert training for individual looking to start a career in social media management.
+
+      As the Creative Course Director at Tech Dive, Precious brings her creativity and experience to designing engaging and practical course content. She ensures that every course not only equips students with the skills to succeed but also inspires them to embrace the endless possibilities of tech.`,
+     imageUrl: imageFour,
+   },
+ ];
+

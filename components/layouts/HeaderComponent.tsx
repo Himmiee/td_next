@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import img from "../../app/assets/png/L.png";
+// import imgLight from "@/public/images/logo.svg";
 import { Button } from "../ui/button";
 import { NavData } from "@/app/helpers/mockData";
 import Link from "next/link";
@@ -13,9 +14,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface HeaderProps {
   showBtn?: boolean;
+  isDark?: boolean;
 }
 
-export const HeaderComponent = ({ showBtn = true }: HeaderProps) => {
+export const HeaderComponent = ({
+  showBtn = true,
+  isDark = false,
+}: HeaderProps) => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,23 +28,14 @@ export const HeaderComponent = ({ showBtn = true }: HeaderProps) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   useEffect(() => {
-    // Check initial scroll position on mount
     const currentScrollPos = window.scrollY;
-    setIsScrolled(currentScrollPos > 20); // Adjust threshold as needed
+    setIsScrolled(currentScrollPos > 20);
 
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-
-      // Determine if we're scrolling up or down
       const isScrollingUp = prevScrollPos > currentScrollPos;
-
-      // Update visibility based on scroll direction
       setIsVisible(isScrollingUp || currentScrollPos < 10);
-
-      // Update background opacity based on scroll position
       setIsScrolled(currentScrollPos > 20);
-
-      // Save current scroll position
       setPrevScrollPos(currentScrollPos);
     };
 
@@ -51,9 +47,8 @@ export const HeaderComponent = ({ showBtn = true }: HeaderProps) => {
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
-    handleResize(); // Ensure menu state is correct on resize
+    handleResize();
 
-    // Cleanup listeners on unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
@@ -66,14 +61,20 @@ export const HeaderComponent = ({ showBtn = true }: HeaderProps) => {
 
   const headerBackgroundVariants = {
     initial: {
-      backgroundColor: "rgba(0, 0, 0, 0)",
-      backdropFilter: "blur(0px)",
+      backgroundColor: "transparent",
+      backdropFilter: "none",
     },
     scrolled: {
-      backgroundColor: "rgba(255, 255, 255, 0.8)",
+      backgroundColor: isDark
+        ? "rgba(0, 0, 0, 0.8)"
+        : "rgba(249, 247, 245, 0.8)",
       backdropFilter: "blur(10px)",
     },
   };
+
+  // Text color classes based on isDark prop
+  const textColorClass = isDark ? "text-white" : "text-black";
+  const menuIconColor = isDark ? "#ffffff" : "#000000";
 
   return (
     <AnimatePresence>
@@ -83,7 +84,7 @@ export const HeaderComponent = ({ showBtn = true }: HeaderProps) => {
           animate={{ y: 0 }}
           exit={{ y: -100 }}
           transition={{ duration: 0.3 }}
-          className="w-full fixed top-0 left-0 right-0 z-50 bg-[#f9f7f5]"
+          className={`w-full fixed top-0 left-0 right-0 z-50 ${textColorClass}`}
         >
           <motion.div
             initial="initial"
@@ -101,7 +102,11 @@ export const HeaderComponent = ({ showBtn = true }: HeaderProps) => {
                 className="cursor-pointer flex font-medium items-center justify-center gap-3"
                 onClick={() => router.push("/")}
               >
-                <Image src={img} alt="techdive logo" priority />
+                <Image
+                  src={img}
+                  alt="techdive logo"
+                  priority
+                />
                 <p>Tech Dive Africa</p>
               </motion.div>
 
@@ -111,7 +116,7 @@ export const HeaderComponent = ({ showBtn = true }: HeaderProps) => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className={`xl:flex flex-col  text-center hidden xl:flex-row gap-10 lg:gap-16 xl:text-sm lg:text-[16px] font-semibold`}
+                  className={`xl:flex flex-col text-center hidden xl:flex-row gap-10 xl:gap-16 xl:text-sm xl:text-[16px] font-semibold`}
                 >
                   {NavData.map((item, idx) => (
                     <motion.div
@@ -143,7 +148,9 @@ export const HeaderComponent = ({ showBtn = true }: HeaderProps) => {
                     <Button
                       size="lg"
                       onClick={() => router.push("/")}
-                      className="relative overflow-hidden group bg-YellowBtnColor text-base"
+                      className={`relative overflow-hidden group bg-YellowBtnColor text-base ${
+                        isDark ? "text-black" : "text-black"
+                      }`}
                     >
                       Get Started
                     </Button>
@@ -153,13 +160,21 @@ export const HeaderComponent = ({ showBtn = true }: HeaderProps) => {
                     whileTap={{ scale: 0.95 }}
                     className="xl:hidden"
                   >
-                    <HiOutlineMenuAlt1 size={30} onClick={toggleMenu} />
+                    <HiOutlineMenuAlt1
+                      size={30}
+                      color={menuIconColor}
+                      onClick={toggleMenu}
+                    />
                   </motion.div>
                 </>
               )}
             </div>
           </motion.div>
-          <SidebarComponent isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          <SidebarComponent
+            isMenuOpen={isMenuOpen}
+            toggleMenu={toggleMenu}
+            // isDark={isDark}
+          />
         </motion.section>
       )}
     </AnimatePresence>

@@ -12,6 +12,7 @@ import { useEffect } from "react";
 interface SidebarProps {
   isMenuOpen: boolean;
   toggleMenu: () => void;
+  isDark?: boolean;
 }
 
 const SidebarComponent = ({ isMenuOpen, toggleMenu }: SidebarProps) => {
@@ -30,10 +31,10 @@ const SidebarComponent = ({ isMenuOpen, toggleMenu }: SidebarProps) => {
 
   return (
     isMenuOpen && (
-      <div className="fixed inset-0 h-screen lg:hidden bg-white z-50 shadow-lg">
+      <div className="fixed inset-0 h-screen xl:hidden bg-white z-50 shadow-lg text-black">
         <div className="flex justify-between items-center py-6 p-6">
           <div
-            className="cursor-pointer lg:hidden"
+            className="cursor-pointer xl:hidden"
             onClick={() => router.push("/")}
           >
             <Image src={smallImg} alt="techdive logo" />
