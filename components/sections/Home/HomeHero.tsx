@@ -48,7 +48,7 @@ export const HomeHeroSectionRight = () => {
 
 export const HomeHeroSection = () => {
   return (
-    <main className="xl:h-[630px] 3xl:max-w-screen-3xl mx-auto pb-9 xl:pb-0">
+    <main className="xl:h-[800px] 3xl:max-w-screen-3xl mx-auto pb-9 xl:pb-0 pt-28">
       <section className="grid grid-cols-1 xl:grid-cols-2 h-full xl:px-12">
         {/* Left Side */}
         <section className="space-y-5 px-4 py-10 xl:py-[80px]">

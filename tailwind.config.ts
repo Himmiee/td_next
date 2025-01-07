@@ -16,6 +16,10 @@ const config: Config = {
         YellowBtnColor: "#F9D434",
         secondaryBackground: "#FFF4E5",
       },
+      backgroundImage: {
+        "hero-gradient":
+          "linear-gradient(177.71deg, #000000 -24.56%, rgba(0, 0, 0, 0.52) 98.08%)",
+      },
       fontFamily: {
         inter: ["var(--font-inter)"],
         figtree: ["var(--font-figtree)"],

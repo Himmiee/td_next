@@ -60,7 +60,7 @@ export const FooterComponent = () => {
 
           {/* Footer links */}
           <motion.div
-            className="text-white flex flex-col text-center xl:flex-row gap-10 lg:gap-24 text-[16px] font-medium"
+            className="text-white flex flex-col text-center xl:flex-row gap-10 xl:gap-24 text-[16px] font-medium"
             variants={containerVariants}
           >
             {NavData.map((item, idx) => (

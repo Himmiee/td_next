@@ -6,7 +6,7 @@ import { TechDiveComponent } from "./WhyUs";
 
 export const HomeComponent = () => {
   return (
-    <section className="pt-28 ">
+    <section className="">
       <HomeHeroSection />
       <TechDiveComponent />
       <TechDiveServiceComponent />
