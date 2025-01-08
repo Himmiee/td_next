@@ -287,3 +287,10 @@ interface TeamMember {
    },
  ];
 
+export   const description = `Right after college, I felt totally lost. I was sending out job applications left and right – banking, admin, you name it – but nothing clicked. I felt stuck, like I was missing something big.
+Then, this crazy thing happened. I got a pair of earrings for my birthday, and on a whim, I decided to try selling them on WhatsApp. I was just using my phone and honestly, I was pretty desperate. To my surprise, someone actually wanted them!
+
+That little sale was a complete game-changer. It sparked this huge interest in digital marketing. I became obsessed, learning everything I could, getting certified, and even working with some amazing organizations like Meta and Fate Foundation. We helped over 5,000 businesses learn how to use social media effectively.
+From there, my interest in tech just kept growing, which led me to product management. I wanted to understand why people use certain products and how to build things that last. This opened up opportunities to work with some really cool brands like Highttable Africa and Chatter Cities Institute.
+
+Now, I'm passionate about helping other people break into tech, just like I did. That's why I started Tech Dive – to guide people who are looking for a rewarding career in this field. `;

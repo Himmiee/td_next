@@ -10,7 +10,7 @@ import {
 
 export const AboutComponent = () => {
   return (
-    <section className=" ">
+    <section className="">
       <AboutHeroSection />
       <AboutTagComponent />
       <MissionComponent />

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const HomeHeroSectionRight = () => {
   return (
-    <main className="xl:h-[680px] 3xl:max-w-screen-3xl mx-auto px-8">
+    <main className="xl:h-[680px] px-8">
       {" "}
       <section className="relative py-10 pb-24 xl:pb-[80px] xl:py-[80px] grid grid-cols-1 xl:grid-cols-2  justify-items-center space-y-6 xl:space-y-0">
         {/* Left Side */}
@@ -58,13 +58,13 @@ export const HomeHeroSection = () => {
               Levelled Up!
             </span>
           </div>
-          <p className="max-w-xl text-lg text-center xl:text-start w-full flex justify-center items-center mx-auto xl:justify-start xl:items-start xl:mx-0">
+          <p className="max-w-xl xl:text-lg text-center xl:text-start w-full flex justify-center items-center mx-auto xl:justify-start xl:items-start xl:mx-0">
             Our supportive community and expert-led courses are designed to
             empower women at every stage of their tech journey, providing
             practical resources and personalized guidance to help you achieve
             your career goals.
           </p>
-          <div className="flex flex-col xl:flex-row gap-4 max-w-3xl mx-auto">
+          <div className="flex flex-col xl:flex-row gap-4 max-w-sm mx-auto">
             <Button className="bg-YellowBtnColor px-8 py-6 font-medium">
               Explore Courses
             </Button>
@@ -75,7 +75,7 @@ export const HomeHeroSection = () => {
         </section>
 
         {/* Right Side */}
-        <div className="relative min-h-[380px] xl:min-h-full w-full">
+        <div className="relative min-h-[380px]  xl:min-h-full w-full">
           <Image
             src={heroRightImg}
             alt="Hero Image"

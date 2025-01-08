@@ -30,8 +30,8 @@ export const TechDiveCard = ({
       }}
     >
       <div
-        className={`flex flex-col xl:flex-row ${
-          isReversed ? "xl:flex-row-reverse" : ""
+        className={`flex flex-col md:flex-row ${
+          isReversed ? "md:flex-row-reverse" : ""
         }`}
       >
         {/* Image Container */}

@@ -15,8 +15,8 @@ export const AboutTagComponent: React.FC = () => {
   ];
 
   return (
-    <section className="h-[550px]  3xl:max-w-screen-3xl mx-auto px-6 xl:px-24 flex items-center bg-white justify-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full w-full">
+    <section className="h-[550px] px-4 xl:px-12 flex items-center bg-white justify-center">
+      <div className="grid grid-cols-1 3xl:max-w-screen-3xl mx-auto md:grid-cols-2 gap-8 h-full w-full">
         <div className="flex flex-col justify-center space-y-5 h-full w-full">
           <p className="text-fontDark text-[32px] font-semibold">Our Vision</p>
           <p className="text-[#020100]">
@@ -39,7 +39,7 @@ export const AboutTagComponent: React.FC = () => {
             ))}
           </ul>
         </div>
-        <div className="hidden xl:flex w-full justify-end items-center">
+        <div className="hidden md:flex w-full justify-end items-center">
           <Image src={img} alt="techdive" />
         </div>
       </div>
@@ -49,7 +49,7 @@ export const AboutTagComponent: React.FC = () => {
 
 export const MissionComponent = () => {
   return (
-    <section className="3xl:max-w-screen-3xl mx-auto space-y-[74px]">
+    <section className="space-y-[74px]">
       {" "}
       <div className="">
         {ourMissionData.map((item, index) => (
@@ -70,22 +70,25 @@ export const MissionComponent = () => {
 
 export const ProfileCardComponent = () => {
   return (
-    <section className="p-4 xl:p-8  3xl:max-w-screen-3xl mx-auto bg-white w-full xl:px-16 space-y-24">
+    <div className="bg-white">
       {" "}
-      <p className="text-fontDark text-[32px] font-semibold text-center">
-        Meet The Team
-      </p>
-      <div className="space-y-16 ">
-        {teamMembers.map((member, idx) => (
-          <TeamProfileCard
-            key={idx}
-            name={member.name}
-            role={member.role}
-            description={member.description}
-            imageUrl={member.imageUrl}
-          />
-        ))}
+      <div className="p-4 px-4 xl:p-8  3xl:max-w-screen-3xl mx-auto  w-full xl:px-12 space-y-24">
+        {" "}
+        <p className="text-fontDark text-[32px] font-semibold text-center">
+          Meet The Team
+        </p>
+        <div className="space-y-16 ">
+          {teamMembers.map((member, idx) => (
+            <TeamProfileCard
+              key={idx}
+              name={member.name}
+              role={member.role}
+              description={member.description}
+              imageUrl={member.imageUrl}
+            />
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 };

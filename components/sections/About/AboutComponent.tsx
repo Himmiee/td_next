@@ -3,8 +3,8 @@ import aboutImg from "@/app/assets/png/about.png";
 
 export const AboutHeroSection = () => {
   return (
-    <main className="h-[800px] 3xl:max-w-screen-3xl mx-auto relative">
-      <section className="relative w-full h-full grid grid-cols-1 xl:grid-rows-[1fr_auto]">
+    <main className="h-[800px] relative ">
+      <section className="relative w-full h-full grid grid-cols-1 xl:grid-rows-[1fr_auto] ">
         {/* Hero Image with Gradient */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
           <div className="relative w-full h-full">
@@ -21,12 +21,10 @@ export const AboutHeroSection = () => {
         </div>
 
         {/* Grid Content */}
-        <div className="relative z-10 h-full flex flex-col  text-white xl:grid grid-cols-1 xl:grid-cols-2 justify-end xl:justify-start xl:items-center gap-4 xl:gap-8 pb-24  p-6 xl:pt-72 xl:px-24">
+        <div className="relative 3xl:max-w-screen-3xl mx-auto z-10 h-full flex flex-col  text-white xl:grid grid-cols-1 xl:grid-cols-2 justify-end xl:justify-start xl:items-center gap-4 xl:gap-8 pb-24  p-6 xl:pt-72 xl:px-24">
           {/* Left Side Content */}
           <div className=" xl:text-left">
-            <p className="text-[38px] font-medium">
-              About Tech Dive
-            </p>
+            <p className="text-[38px] font-medium">About Tech Dive</p>
           </div>
 
           {/* Right Side Content */}
