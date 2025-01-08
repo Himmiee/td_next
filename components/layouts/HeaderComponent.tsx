@@ -15,11 +15,13 @@ import { motion, AnimatePresence } from "framer-motion";
 interface HeaderProps {
   showBtn?: boolean;
   isDark?: boolean;
+  isContact?: boolean;
 }
 
 export const HeaderComponent = ({
   showBtn = true,
   isDark = false,
+  isContact = false,
 }: HeaderProps) => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -73,7 +75,7 @@ export const HeaderComponent = ({
   };
 
   // Text color classes based on isDark prop
-  const textColorClass = isDark ? "text-white" : "text-black";
+  const textColorClass = isDark ? "text-white " : isContact? "bg-transparent text-black": "text-black bg-[#f9f7f5]";
   const menuIconColor = isDark ? "#ffffff" : "#000000";
 
   return (
@@ -84,14 +86,14 @@ export const HeaderComponent = ({
           animate={{ y: 0 }}
           exit={{ y: -100 }}
           transition={{ duration: 0.3 }}
-          className={`w-full fixed top-0 left-0 right-0 z-50 ${textColorClass}`}
+          className={`w-full fixed top-0 left-0 right-0 z-50  ${textColorClass}`}
         >
           <motion.div
             initial="initial"
             animate={isScrolled ? "scrolled" : "initial"}
             variants={headerBackgroundVariants}
             transition={{ duration: 0.3 }}
-            className="max-w-screen-3xl mx-auto px-6 xl:px-12 py-6"
+            className="max-w-screen-3xl mx-auto px-6 xl:px-12 py-6 "
           >
             {/* Header Content */}
             <div className="flex justify-between items-center w-full">
@@ -102,11 +104,7 @@ export const HeaderComponent = ({
                 className="cursor-pointer flex font-medium items-center justify-center gap-3"
                 onClick={() => router.push("/")}
               >
-                <Image
-                  src={img}
-                  alt="techdive logo"
-                  priority
-                />
+                <Image src={img} alt="techdive logo" priority />
                 <p>Tech Dive Africa</p>
               </motion.div>
 

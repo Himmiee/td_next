@@ -294,3 +294,56 @@ That little sale was a complete game-changer. It sparked this huge interest in d
 From there, my interest in tech just kept growing, which led me to product management. I wanted to understand why people use certain products and how to build things that last. This opened up opportunities to work with some really cool brands like Highttable Africa and Chatter Cities Institute.
 
 Now, I'm passionate about helping other people break into tech, just like I did. That's why I started Tech Dive – to guide people who are looking for a rewarding career in this field. `;
+
+export const coursesFaqs = [
+  {
+    title: "SECTION 1: Introduction to Product Management",
+    content:
+      "Synergyy is Africa’s Talent Cloud, connecting startups and businesses with elite African tech talent. We handle everything from talent acquisition and management to payroll, making it seamless for companies to hire top professionals across borders and focus on growth.",
+  },
+  {
+    title: "SECTION 2: Understanding the Product Development Lifecycle",
+    content:
+      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
+  },
+  {
+    title: "SECTION 3: User Research and User Needs",
+    content:
+      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+  },
+  {
+    title: "SECTION 4: User-Centric Product Development?",
+    content:
+      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
+  },
+  {
+    title: "SECTION 5: Designing and Running Experiments",
+    content:
+      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
+  },
+  {
+    title: "SECTION 6: Design and Wireframing",
+    content:
+      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+  },
+  {
+    title: "SECTION 7: Metrics for Product Managers",
+    content:
+      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+  },
+  {
+    title: "SECTION 8: Building Products",
+    content:
+      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+  },
+  {
+    title: "SECTION 9: Collaboration and Stakeholder Management",
+    content:
+      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+  },
+  {
+    title: "SECTION 10: Your Guide to Landing a PM Role",
+    content:
+      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+  },
+];

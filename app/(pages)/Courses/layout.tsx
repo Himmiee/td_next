@@ -8,13 +8,8 @@ type Props = {
 const MainLayout = ({ children }: Props) => {
   return (
     <main className="overflow-x-hidden">
-      {/* Header should be positioned outside of any content wrappers */}
-      <HeaderComponent isDark={false} showBtn isContact={true} />
-
-      {/* Content of the page */}
-      <div>{children}</div>
-
-      {/* Footer at the bottom */}
+      <HeaderComponent showBtn/>
+      <div className="bg-[#f9f7f5]">{children}</div>
       <FooterComponent />
     </main>
   );

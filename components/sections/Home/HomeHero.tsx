@@ -64,7 +64,7 @@ export const HomeHeroSection = () => {
             practical resources and personalized guidance to help you achieve
             your career goals.
           </p>
-          <div className="flex flex-col xl:flex-row gap-4 max-w-sm mx-auto">
+          <div className="flex flex-col xl:flex-row gap-4 max-w-sm mx-auto xl:mx-0">
             <Button className="bg-YellowBtnColor px-8 py-6 font-medium">
               Explore Courses
             </Button>
