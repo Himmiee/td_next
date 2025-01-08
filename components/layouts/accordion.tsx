@@ -5,9 +5,13 @@ import { BiMinus, BiPlus } from "react-icons/bi";
 
 interface AccordionProps {
   items: AccordionItem[];
+  width?: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ items }) => {
+const Accordion: React.FC<AccordionProps> = ({
+  items,
+  width = "w-full xl:w-2/3",
+}) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
@@ -15,7 +19,9 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
   };
 
   return (
-    <div className="w-full xl:w-2/3 flex justify-center items-center flex-col mx-auto rounded-xl">
+    <div
+      className={`${width} flex justify-center items-center flex-col mx-auto rounded-xl`}
+    >
       {items.map((item, index) => (
         <div
           key={index}

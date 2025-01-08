@@ -8,7 +8,7 @@ type Props = {
 const MainLayout = ({ children }: Props) => {
   return (
     <main className="overflow-x-hidden">
-      <HeaderComponent showBtn isDark={true}/>
+      <HeaderComponent showBtn/>
       <div className="bg-[#f9f7f5]">{children}</div>
       <FooterComponent />
     </main>
