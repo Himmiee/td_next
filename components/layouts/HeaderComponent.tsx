@@ -15,11 +15,13 @@ import { motion, AnimatePresence } from "framer-motion";
 interface HeaderProps {
   showBtn?: boolean;
   isDark?: boolean;
+  isContact?: boolean;
 }
 
 export const HeaderComponent = ({
   showBtn = true,
   isDark = false,
+  isContact = false,
 }: HeaderProps) => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -73,7 +75,7 @@ export const HeaderComponent = ({
   };
 
   // Text color classes based on isDark prop
-  const textColorClass = isDark ? "text-white " : "text-black bg-[#f9f7f5]";
+  const textColorClass = isDark ? "text-white " : isContact? "bg-transparent text-black": "text-black bg-[#f9f7f5]";
   const menuIconColor = isDark ? "#ffffff" : "#000000";
 
   return (

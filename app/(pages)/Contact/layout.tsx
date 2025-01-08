@@ -9,7 +9,7 @@ const MainLayout = ({ children }: Props) => {
   return (
     <main className="overflow-x-hidden">
       {/* Header should be positioned outside of any content wrappers */}
-      <HeaderComponent isDark={false} showBtn/>
+      <HeaderComponent isDark={false} showBtn isContact={true} />
 
       {/* Content of the page */}
       <div>{children}</div>
