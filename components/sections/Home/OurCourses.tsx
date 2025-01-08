@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 
 export const CoursesSection = () => {
   return (
-    <main className="xl:h-[700px] 3xl:max-w-screen-3xl mx-auto px-4 flex flex-col items-center space-y-8">
+    <main className="xl:h-[650px]  3xl:max-w-screen-3xl mx-auto  px-4 pb-6 xl:pb-0 flex flex-col items-center space-y-8 pt-10">
       <div className="space-y-3">
         {" "}
-        <div className="text-[36px] text-center font-semibold mt-4">
+        <div className="text-[36px] text-center font-semibold ">
           Our Courses
         </div>
         <p className="text-[#59595A] text-center max-w-3xl">
@@ -30,11 +30,9 @@ export const CoursesSection = () => {
   );
 };
 
-
-
 export const DiveSection = () => {
   return (
-    <main className="h-96 3xl:max-w-screen-3xl mx-auto px-4 flex flex-col items-center justify-center space-y-6 bg-YellowBtnColor">
+    <main className="h-96 px-4 flex flex-col items-center justify-center space-y-6 bg-YellowBtnColor">
       <div className="space-y-2 mb-2">
         {" "}
         <div className="text-[36px] text-center font-semibold ">

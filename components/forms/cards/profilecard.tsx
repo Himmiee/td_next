@@ -40,11 +40,11 @@ export const TeamProfileCard: React.FC<TeamProfileCardProps> = ({
 
       {/* Image Section with Hover Effect for Small Screens */}
       <div className="relative w-full xl:w-[320px] h-[400px] xl:h-auto flex-shrink-0 group">
-        <div className="rounded-lg overflow-hidden bg-gradient-to-b from-purple-50 to-purple-100 relative h-full">
+        <div className="rounded-lg overflow-hidden relative h-full">
           <Image
             src={imageUrl}
             alt={name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover md:object-contain xl:object-cover"
           />
 
           {/* Hover Description (Visible on small to lg screens) */}
@@ -55,7 +55,7 @@ export const TeamProfileCard: React.FC<TeamProfileCardProps> = ({
       </div>
 
       {/* Text Content Section for Large Screens */}
-      <div className="flex-1 space-y-4 w-full xl:hidden">
+      <div className="flex-1 space-y-4 justify-center items-center w-full xl:hidden">
         <div className=" w-full flex justify-center items-center flex-col space-y-2">
           <h2 className="text-3xl font-semibold mb-1">{name}</h2>
           <p className="text-gray-600 text-lg">{role}</p>
