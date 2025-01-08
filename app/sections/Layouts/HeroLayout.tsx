@@ -35,10 +35,10 @@ export const HeroLayout: React.FC<HeroLayoutProps> = ({
         </div>
 
         {/* Content Container */}
-        <div className="relative h-full flex flex-col lg:flex-row items-center justify-center px-4 lg:px-16 text-white lg:space-x-16">
+        <div className="relative h-full flex flex-col lg:flex-row items-center justify-center px-4 lg:px-16 text-white lg:space-x-24">
           {/* Social Icons */}
           {socialIcons.length > 0 && (
-            <div className="flex lg:flex-col gap-6 lg:gap-12 lg:space-y-16 mb-6 lg:mb-0 lg:border-r-4  lg:pr-12">
+            <div className="flex lg:flex-col gap-6 lg:gap-12 lg:space-y-16 mb-6 lg:mb-0 lg:border-r-4  lg:pr-24">
               {socialIcons.map((icon, index) => (
                 <div key={index} className="">
                   <Image src={icon.src} alt={icon.alt} />
@@ -48,7 +48,7 @@ export const HeroLayout: React.FC<HeroLayoutProps> = ({
           )}
 
           {/* Text Content */}
-          <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-16 text-center lg:text-left lg:pl-12 lg:space-x-12">
+          <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-16 text-center lg:text-left lg:pl-12 lg:space-x-16">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold">
               {title}
             </h1>
