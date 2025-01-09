@@ -42,7 +42,7 @@ export const timelineItems = [
   {
     title: "What we Offer",
     description:
-      "The services our PM teams provide includes Independent professional project management of all types of building and construction projectsBriefing and Feasibility Process Move Management and Occupational space audits Post project review and evaluation",
+      "The services our PM teams provide includes : Independent professional project management of all types of building and construction ,projects ,Briefing and Feasibility Process , Move Management and Occupational space audits and Post project review and evaluation",
     icon: img,
   },
   {
