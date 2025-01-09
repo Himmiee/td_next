@@ -59,7 +59,7 @@ const SidebarComponent = ({ isMenuOpen, toggleMenu }: SidebarProps) => {
               className="text-base bg-YellowBtnColor border border-YellowBtnColor"
               onClick={() => {
                 toggleMenu();
-                router.push("/");
+                router.push("/Contact");
               }}
             >
               Get Started

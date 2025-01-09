@@ -1,6 +1,7 @@
 import { coursesData } from "@/app/helpers/mockData";
 import { CoursesCard } from "@/components/forms/cards/formcard";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const CoursesSection = () => {
   return (
@@ -42,7 +43,10 @@ export const DiveSection = () => {
           Take the first step toward your tech career today.
         </p>
       </div>
-      <Button className="bg-black text-white p-6">Get Started Now</Button>
+      <Link href="/Contact" scroll>
+        {" "}
+        <Button className="bg-black text-white p-6">Get Started Now</Button>
+      </Link>
       <p className="text[#484848] text-[13px]">
         Join <span className="text-black">100+</span> others levelling up with
         TechDive

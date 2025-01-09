@@ -145,7 +145,7 @@ export const HeaderComponent = ({
                   >
                     <Button
                       size="lg"
-                      onClick={() => router.push("/")}
+                      onClick={() => router.push("/Contact")}
                       className={`relative overflow-hidden group bg-YellowBtnColor text-base ${
                         isDark ? "text-black" : "text-black"
                       }`}

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import heroImg from "@/app/assets/webp/Hero Image.webp";
 import heroRightImg from "@/app/assets/webp/hero.webp";
 import Image from "next/image";
+import Link from "next/link";
 
 export const HomeHeroSectionRight = () => {
   return (
@@ -23,10 +24,14 @@ export const HomeHeroSectionRight = () => {
             your career goals.
           </p>
           <div className="flex flex-col xl:flex-row gap-4 ">
-            <Button className="bg-YellowBtnColor px-8 py-6 font-medium">
-              Explore Courses
-            </Button>
+            <Link href="/Courses" scroll>
+              <Button className="bg-YellowBtnColor px-8 py-6 font-medium cursor-pointer">
+                Explore Courses
+              </Button>
+            </Link>
+
             <Button className="px-8 py-6 shadow-none font-medium">
+              {" "}
               Take the Career Quiz
             </Button>
           </div>
@@ -65,9 +70,11 @@ export const HomeHeroSection = () => {
             your career goals.
           </p>
           <div className="flex flex-col xl:flex-row gap-4 max-w-sm mx-auto xl:mx-0">
-            <Button className="bg-YellowBtnColor px-8 py-6 font-medium">
-              Explore Courses
-            </Button>
+            <Link href="/Courses" scroll>
+              <Button className="bg-YellowBtnColor px-8 py-6 font-medium cursor-pointer">
+                Explore Courses
+              </Button>
+            </Link>
             <Button className="px-8 py-6 shadow-none font-medium">
               Take the Career Quiz
             </Button>
