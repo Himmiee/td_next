@@ -11,7 +11,7 @@ export default function Footer() {
     <div className="w-full">
       <Newsletter />
       <footer className="bg-primary-60 w-full">
-        <div className="xl:px-24 lg:px-10 px-4 py-12 mx-auto w-full">
+        <div className="auto-container w-full">
           {/* Main Footer Content */}
           <div className="flex flex-wrap lg:flex-nowrap w-full gap-y-8">
             {/* Trusted By Section */}

@@ -72,7 +72,13 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+    /* font-family: "Urbanist", sans-serif; */
+  }
+
+  .auto-container {
+    @apply w-11/12 2xl:max-w-[1440px] mx-auto;
   }
 }
