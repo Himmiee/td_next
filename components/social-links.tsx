@@ -17,7 +17,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export function SocialLinks() {
   return (
-    <div className="flex gap-4 pt-4">
+    <div className="flex gap-10 pt-4">
       {SOCIAL_LINKS.map(({ name, href, icon }) => {
         const Icon = iconMap[icon];
         return (

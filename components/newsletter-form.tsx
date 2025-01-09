@@ -1,3 +1,4 @@
+import Image from "next/image";
 const Newsletter = () => {
   return (
     <div className="bg-primary-60 py-6 px-4 sm:px-8 my-10">
@@ -16,20 +17,12 @@ const Newsletter = () => {
             type="submit"
             className="absolute right-1 top-1/2 -translate-y-1/2 bg-primary-100 text-white rounded-full w-10 h-10 flex items-center justify-center  focus:outline-none"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4.5 12h15m0 0l-6.5 6.5m6.5-6.5l-6.5-6.5"
-              />
-            </svg>
+            <Image
+              src={"/assets/icons/Vector.svg"}
+              height={20}
+              width={20}
+              alt="newsletter logo"
+            />
           </button>
         </div>
       </div>

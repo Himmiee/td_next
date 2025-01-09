@@ -4,7 +4,7 @@ import { ServicesList } from "../services-list";
 import { SocialLinks } from "../social-links";
 import { TrustedLogos } from "../trusted-logos";
 import Link from "next/link";
-import { Mail, PhoneCall } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -26,7 +26,7 @@ export default function Footer() {
               <div className="space-y-4">
                 <Link
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="flex items-center gap-2 text-sm hover:text-primary-100 transition-colors"
+                  className="flex items-center gap-3 text-sm hover:text-primary-100 transition-colors"
                 >
                   <Mail className="h-4 w-4 text-primary-100" />
                   {CONTACT_INFO.email}
@@ -35,9 +35,9 @@ export default function Footer() {
                   <Link
                     key={phone}
                     href={`tel:${phone.replace(/\s+/g, "")}`}
-                    className="flex items-center gap-2 text-sm hover:text-primary-100 transition-colors"
+                    className="flex items-center gap-3 text-sm hover:text-primary-100 transition-colors"
                   >
-                    <PhoneCall className="h-4 w-4 text-primary-100" />
+                    <Phone className="h-4 w-4 text-primary-100" />
                     {phone}
                   </Link>
                 ))}
