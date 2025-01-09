@@ -1,3 +1,4 @@
+import img from "@/public/images/png/community.png"
 export const constructionSteps = [
   {
     title: "Preliminary Works & Demolitions",
@@ -25,3 +26,24 @@ export const constructionSteps = [
       "Pearl Projects is committed to operating a project site that is safe and without risk to health, safety and welfare to all those involved in the project and for third parties as well. We are also committed to preventing accidents and ill health for our staff, client, (sub)-contractors, third parties and members of the public.",
   },
 ];
+
+  export const timelineItems = [
+    {
+      title: "Why Pearl Projects?",
+      description:
+        "For Pearl Projects and Development, being a good Project Manager means strength of character with an added ability to understand the client and their brief and clearly communicate this to the team as part of the project process. Our PMs earn the client’s trust and respect of their team, ensuring each project is not just delivered but is a success.",
+      icon: img,
+    },
+    {
+      title: "What we Offer",
+      description:
+        "The services our PM teams provide includes Independent professional project management of all types of building and construction projectsBriefing and Feasibility Process Move Management and Occupational space audits Post project review and evaluation",
+      icon: img,
+    },
+    {
+      title: "Our Approach",
+      description:
+        "Each client brief is facilitated by our Director and the supporting team. Across Pearl Projects and Development, there are individuals with unique areas of expertise. Many work on several client projects and are on our Project Management team. Given their skills and experience, they work to guarantee the successful delivery of all client projects.",
+      icon: img,
+    },
+  ];

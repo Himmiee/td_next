@@ -1,3 +1,4 @@
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 interface TimelineItemProps {
@@ -34,5 +35,73 @@ interface TimelineProps {
 export const Timeline: React.FC<TimelineProps> = ({ children }) => {
   return (
     <div className="w-full max-w-4xl mx-auto lg:pl-32 relative">{children}</div>
+  );
+};
+
+interface HorizontalTimelineItemProps {
+  title: string;
+  description: string;
+  icon?: StaticImageData;
+  isLast?: boolean;
+}
+
+export const HorizontalTimelineItem: React.FC<HorizontalTimelineItemProps> = ({
+  title,
+  description,
+  icon,
+  isLast = false,
+}) => {
+  return (
+    <div className="flex flex-col items-start w-full">
+      {/* Icon Container */}
+      <div className="relative">
+        <div className="w-16 h-16 bg-[#2B2F84] flex justify-center rounded items-center">
+          {icon && (
+            <div className="w-16 h-16 flex items-center justify-center">
+              <Image
+                src={icon}
+                alt={title}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          )}
+        </div>
+        {/* Horizontal Line */}
+
+        <div className="hidden lg:block absolute top-1/2 -right-full transform -translate-y-1/2 w-full h-2 border-[#2B2F84] border bg-white" />
+      </div>
+
+      {/* Content */}
+      <div className="mt-6  max-w-sm ">
+        <h3 className="text-xl font-bold mb-3">{title}</h3>
+        <p className="text-gray-600">{description}</p>
+      </div>
+    </div>
+  );
+};
+
+interface HorizontalTimelineProps {
+  items: Array<{
+    title: string;
+    description: string;
+    icon?: StaticImageData;
+  }>;
+}
+
+export const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
+  items,
+}) => {
+  return (
+    <div className="w-full  mx-auto px-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0">
+        {items.map((item, index) => (
+          <HorizontalTimelineItem
+            key={index}
+            {...item}
+            isLast={index === items.length - 1}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
