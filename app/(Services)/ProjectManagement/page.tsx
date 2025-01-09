@@ -1,4 +1,7 @@
-import { AchievementLayout } from "@/components/sections/Layouts/AchievementsLayouts";
+import {
+  AchievementLayout,
+  AchievementBottomLayout,
+} from "@/components/sections/Layouts/AchievementsLayouts";
 import { ContactFormLayout } from "@/components/sections/Layouts/ContactLayout";
 import {
   PMDetailSection,
@@ -9,12 +12,15 @@ import { ProjectManangementHeroSection } from "@/components/sections/ProjectMana
 
 const ProjectManagementPage: React.FC = () => {
   return (
-    <section className="space-y-12 lg:space-y-24">
+    <section className="space-y-2 md:space-y-24">
       <ProjectManangementHeroSection />
       <PMDetailSection />
       <PMTimeLineSection />
       <PMReverseDetailSection />
-      <AchievementLayout />
+      <section>
+        <AchievementLayout />
+        <AchievementBottomLayout />
+      </section>
       <ContactFormLayout />
     </section>
   );

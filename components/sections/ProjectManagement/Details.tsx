@@ -1,14 +1,14 @@
 import { ContentGrid } from "../Layouts/PMGrids";
-import img from "@/public/images/png/pm-grid.png";
-import imgList from "@/public/images/png/project-management-list 1.png";
-import imgTwo from "@/public/images/png/pm-grid-2.png";
-import imgListTwo from "@/public/images/png/labour-consulting 1.png";
+import img from "@/public/images/services/png/pm-grid.png";
+import imgList from "@/public/images/services/png/project-management-list 1.png";
+import imgTwo from "@/public/images/services/png/pm-grid-2.png";
+import imgListTwo from "@/public/images/services/png/labour-consulting 1.png";
 import { HorizontalTimeline } from "../Layouts/GridStep";
 import { timelineItems } from "@/lib/mockdata";
 
 export const PMDetailSection = () => {
   return (
-    <section className="h-[550px]">
+    <section className="lg:h-[550px]">
       <ContentGrid
         image={img}
         title="Capability Statement"
@@ -23,7 +23,7 @@ export const PMDetailSection = () => {
 
 export const PMReverseDetailSection = () => {
   return (
-    <section className="h-[550px]">
+    <section className="lg:h-[550px]">
       <ContentGrid
         image={imgTwo}
         title="Capability Statement"

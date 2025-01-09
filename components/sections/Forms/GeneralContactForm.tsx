@@ -1,57 +1,78 @@
 "use client";
-
-import { useState } from "react";
-import CustomInput from "../../custom/Inputs/CustomInputs";
-import CustomTextarea from "../../custom/Inputs/CustomTextarea";
+import { useForm, FormProvider } from "react-hook-form";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import { CustomInput } from "../../custom/Inputs/CustomInputs";
+import { FormTextArea } from "@/components/custom/Inputs/CustomTextarea";
+import { FormData } from "@/lib/types";
 
 export const GeneralContactForm: React.FC = () => {
-  const [text, setText] = useState("");
+  const methods = useForm<FormData>({
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+      agreeToTerms: false,
+    },
+  });
+
+  const { handleSubmit } = methods;
+
+  const onSubmit = (data: FormData) => {
+    console.log("Form Submitted:", data);
+  };
+
   return (
-    <section className="space-y-6">
-      <div className="text-[#303030] font-semibold text-xl">
-        Are you interested in a similar service? <br /> Contact us via this
-        form.
-      </div>
-      <div className="space-y-4">
-        {" "}
-        <CustomInput
-          value={text}
-          onChange={setText}
-          placeholder="Name"
-          className="w-full rounded-none"
-        />
-        <CustomInput
-          value={text}
-          onChange={setText}
-          placeholder="Email"
-          className="w-full rounded-none"
-        />
-        <CustomInput
-          value={text}
-          onChange={setText}
-          placeholder="Subject"
-          className="w-full rounded-none"
-        />
-        <CustomTextarea
-          value={text}
-          onChange={setText}
-          placeholder="Message"
-          className="w-full rounded-none"
-          rows={6}
-        />
-      </div>
-      <div className="flex gap-3 items-center ">
-        <Checkbox />
-        By continuing you agree to our
-        <span className="font-medium">
-          Terms of Service and Privacy Policy.
-        </span>
-      </div>
-      <Button className="w-full bg-[#2B2F84] text-white rounded-none">
-        Submit
-      </Button>
-    </section>
+    <FormProvider {...methods}>
+      <section className="space-y-6">
+        <div className="text-[#303030] font-semibold text-xl">
+          Are you interested in a similar service? <br /> Contact us via this
+          form.
+        </div>
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <CustomInput
+            isFormInput={true}
+            name="name"
+            label="Name"
+            required={false}
+            type="text"
+            placeholder="Enter your name"
+          />
+          <CustomInput
+            isFormInput={true}
+            name="email"
+            label="Email"
+            required={false}
+            type="email"
+            placeholder="Enter your email"
+          />
+          <CustomInput
+            isFormInput={true}
+            name="subject"
+            label="Subject"
+            required={false}
+            type="text"
+            placeholder="Enter the subject"
+          />
+          <FormTextArea
+            name="message"
+            label="Message"
+            required={false}
+            placeholder="Type your message here."
+          />
+          <div className="flex gap-3 items-center">
+            <Checkbox />
+            By continuing you agree to our Terms of Service and Privacy Policy.
+          </div>
+          <Button
+            type="submit"
+            className="w-full bg-[#2B2F84] text-white rounded-none"
+          >
+            Submit
+          </Button>
+        </form>
+      </section>
+    </FormProvider>
   );
 };

@@ -38,6 +38,7 @@ export const Timeline: React.FC<TimelineProps> = ({ children }) => {
   );
 };
 
+
 interface HorizontalTimelineItemProps {
   title: string;
   description: string;
@@ -49,13 +50,13 @@ export const HorizontalTimelineItem: React.FC<HorizontalTimelineItemProps> = ({
   title,
   description,
   icon,
-  isLast = false,
+  // isLast = false,
 }) => {
   return (
-    <div className="flex flex-col items-start w-full">
+    <div className="flex flex-col items-start md:items-center lg:items-start w-full">
       {/* Icon Container */}
-      <div className="relative">
-        <div className="w-16 h-16 bg-[#2B2F84] flex justify-center rounded items-center">
+      <div className="relative flex items-center md:justify-center lg:justify-start w-full">
+        <div className="w-16 h-16 bg-[#2B2F84] flex justify-center rounded items-center z-10">
           {icon && (
             <div className="w-16 h-16 flex items-center justify-center">
               <Image
@@ -67,12 +68,13 @@ export const HorizontalTimelineItem: React.FC<HorizontalTimelineItemProps> = ({
           )}
         </div>
         {/* Horizontal Line */}
-
-        <div className="hidden lg:block absolute top-1/2 -right-full transform -translate-y-1/2 w-full h-2 border-[#2B2F84] border bg-white" />
+        {/* {!isLast && ( */}
+          <div className="hidden lg:block absolute left-16 right-0 h-2 bg-white border-[1px] border-l-0 border-[#2B2F84]" />
+        {/* )} */}
       </div>
 
       {/* Content */}
-      <div className="mt-6  max-w-sm ">
+      <div className="mt-6 max-w-sm md:max-w-[430px] lg:max-w-sm md:text-center lg:text-start">
         <h3 className="text-xl font-bold mb-3">{title}</h3>
         <p className="text-gray-600">{description}</p>
       </div>
@@ -92,7 +94,7 @@ export const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
   items,
 }) => {
   return (
-    <div className="w-full  mx-auto px-4">
+    <div className="w-full mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-0">
         {items.map((item, index) => (
           <HorizontalTimelineItem
@@ -105,3 +107,5 @@ export const HorizontalTimeline: React.FC<HorizontalTimelineProps> = ({
     </div>
   );
 };
+
+export default HorizontalTimeline;

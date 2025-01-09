@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import { GeneralContactForm } from "../Forms/GeneralContactForm";
-import largeImg from "@/public/images/png/construct.png";
-import capImg from "@/public/images/png/cap.png";
+import largeImg from "@/public/images/services/png/construct.png";
+import capImg from "@/public/images/services/png/cap.png";
 
 export const ContactFormLayout: React.FC = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 ">
+    <section className="grid grid-cols-1 lg:grid-cols-3 gap-6  ">
       {/* Left Side - Large Image */}
-      <div className="col-span-1 hidden lg:block h-[910px] ">
+      <div className="col-span-1 hidden lg:block h-[980px] ">
         <Image
           src={largeImg}
           alt="Construction Image"
@@ -28,7 +28,7 @@ export const ContactFormLayout: React.FC = () => {
         </div>
 
         {/* Contact Form */}
-        <div className=" w-full ">
+        <div className=" w-full md:max-w-[430px] flex justify-center items-center mx-auto lg:max-w-full lg:mx-0 lg:block">
           <GeneralContactForm />
         </div>
       </div>
