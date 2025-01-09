@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import CustomInput from "../Inputs/CustomInputs";
-import CustomTextarea from "../Inputs/CustomTextarea";
+import CustomInput from "../../custom/Inputs/CustomInputs";
+import CustomTextarea from "../../custom/Inputs/CustomTextarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 

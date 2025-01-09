@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { GeneralContactForm } from "../Forms/GeneralContactForm";
-import largeImg from "@/app/assets/png/construct.png";
-import capImg from "@/app/assets/png/cap.png";
+import largeImg from "@/public/images/png/construct.png";
+import capImg from "@/public/images/png/cap.png";
 
 export const ContactFormLayout: React.FC = () => {
   return (

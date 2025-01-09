@@ -1,6 +1,6 @@
-import { ContactSection } from "@/app/sections/Construction/ContactSection";
-import { ConstructionDetailsComponent } from "@/app/sections/Construction/Details";
-import { ConstructionHeroSection } from "@/app/sections/Construction/Hero";
+import { ContactSection } from "@/components/sections/Construction/ContactSection";
+import { ConstructionDetailsComponent } from "@/components/sections/Construction/Details";
+import { ConstructionHeroSection } from "@/components/sections/Construction/Hero";
 
 const ConstructionPage: React.FC = () => {
   return (

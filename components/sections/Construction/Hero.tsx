@@ -1,8 +1,8 @@
 import React from "react";
-import constructionHeroImg from "@/app/assets/png/construction-img.webp";
-import twitterImg from "@/app/assets/png/icons/twitter.png";
-import instagramImg from "@/app/assets/png/icons/instagram.png";
-import fbImg from "@/app/assets/png/icons/facebook.png";
+import constructionHeroImg from "@/public/images/png/construction-img.webp";
+import twitterImg from "@/public/icons/twitter.png";
+import instagramImg from "@/public/icons/instagram.png";
+import fbImg from "@/public/icons/facebook.png";
 import { HeroLayout } from "../Layouts/HeroLayout";
 
 export const ConstructionHeroSection: React.FC = () => {
