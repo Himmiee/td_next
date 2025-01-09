@@ -21,7 +21,7 @@ export const HeroLayout: React.FC<HeroLayoutProps> = ({
 }) => {
   return (
     <main className="min-h-[400px] h-screen max-h-[600px] relative w-full">
-      <section className="relative w-full h-full">
+      <section className="relative w-full h-full flex justify-center items-center" >
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="relative w-full h-full">
@@ -35,7 +35,7 @@ export const HeroLayout: React.FC<HeroLayoutProps> = ({
         </div>
 
         {/* Content Container */}
-        <div className="relative h-full flex flex-col lg:flex-row items-center justify-center px-4 lg:px-16 text-white lg:space-x-24">
+        <div className="relative h-full flex flex-col lg:flex-row items-center justify-center lg:justify-start text-white lg:space-x-24 lg:w-3/4 ">
           {/* Social Icons */}
           {socialIcons.length > 0 && (
             <div className="flex lg:flex-col gap-6 lg:gap-12 lg:space-y-16 mb-6 lg:mb-0 lg:border-r-4  lg:pr-24">
