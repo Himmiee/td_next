@@ -89,12 +89,17 @@ const Navbar = () => {
 
   return (
     <header
+      // className={`${
+      //   scrolled ? "fixed transition ease-in" : ""
+      // } left-0 right-0 z-30 w-full`}
       className={`${
-        scrolled ? "fixed transition ease-in" : ""
-      } left-0 right-0 z-30 w-full`}
+        scrolled
+          ? "fixed top-0 left-0 right-0 bg-white shadow-md transition ease-in z-30"
+          : ""
+      } w-full`}
     >
       <main className="w-full relative h-full">
-        <div className="w-full flex flex-row items-center justify-between bg-white xl:px-24 lg:px-10 px-4 h-20">
+        <div className="w-full flex flex-row items-center justify-between bg-white xl:px-32 lg:px-10 px-4  h-20">
           <Link href="/">
             <Image
               src="/assets/logos/Pearl_logo.png"
