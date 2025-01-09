@@ -1,17 +1,21 @@
+"use client"
+
 import { bulletPoints } from "@/app/helpers/mockData";
-import { FaX } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
+// import { FaX } from "react-icons/fa6";
 import { IoMdArrowForward } from "react-icons/io";
 
 export const QuestionCard = () => {
+  const router = useRouter()
   return (
     <div className="rounded-lg bg-[#F7F2F8] w-full xl:w-2/3 p-6 space-y-6">
       <div className="flex justify-between items-center text-[#262626]">
         <h2 className="text-[17px] font-semibold">
           What courses do you offer?
         </h2>
-        <div className="bg-[#FEF6D6] p-4">
+        {/* <div className="bg-[#FEF6D6] p-4">
           <FaX className="" />
-        </div>
+        </div> */}
       </div>
       <div className="space-y-4">
         <p className="text-[#4C4C4D]">
@@ -29,7 +33,10 @@ export const QuestionCard = () => {
           experience to prepare you for a successful career in tech.
         </p>
       </div>
-      <div className="h-16 flex justify-between items-center p-4 rounded-lg bg-white">
+      <div
+        onClick={() => router.push("/Courses")}
+        className="h-16 flex justify-between items-center p-4 rounded-lg cursor-pointer bg-white"
+      >
         <p className="text-[17px]">Enroll for a course</p>
         <div>
           <IoMdArrowForward className="text-xl text-[#262626]" />

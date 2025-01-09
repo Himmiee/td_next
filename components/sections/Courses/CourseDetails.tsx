@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const CourseDetails = () => {
   return (
     <section className="bg-white ">
@@ -6,9 +8,12 @@ export const CourseDetails = () => {
           <div className="text-2xl text-[#262626] font-medium">
             Course Overview
           </div>
-          <div className="bg-YellowBtnColor p-3 rounded-lg px-4 text-black">
-            Enrol
-          </div>
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSeTvW9BzMHQO4qdR7oOqHGc0aDlp2_UneAkxitcuLLi6XgX5w/viewform">
+            {" "}
+            <div className="bg-YellowBtnColor p-3 rounded-lg px-4 text-black">
+              Enrol
+            </div>
+          </Link>
         </div>
         <div className="space-y-5 leading-[1.8]">
           <p>Welcome to Tech Dive Product Management Program</p>

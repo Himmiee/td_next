@@ -3,7 +3,7 @@ import aboutImg from "@/app/assets/png/courses-img.png";
 
 export const CourseSection = () => {
   return (
-    <main className="h-[350px] relative xl:m-8 mt-[115px] xl:mt-[115px]">
+    <main className="h-[350px] relative xl:m-8 mt-[115px] xl:mt-[105px] bg-white">
       <section className="relative w-full h-full grid grid-cols-1 xl:grid-rows-[1fr_auto] ">
         {/* Hero Image with Gradient */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
