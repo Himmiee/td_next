@@ -8,14 +8,14 @@ import { CustomInput } from "./inputs/CustomInput";
 import { Button } from "@/components/ui/button";
 import { FormTextArea } from "./inputs/TextAreaContainer";
 import PhoneInputField from "./inputs/Phoneinput";
-import { formControls } from "@/app/helpers/helperFuncs";
+import { formControls } from "@/lib/helpers/helperFuncs";
 // import { useContact } from "@/lib/queries";
 // import { ErrorResponse } from "@/lib/interface";
 // import { showToast } from "../layouts/Toast";
 // import { useEffect } from "react";
 // import { CgSpinner } from "react-icons/cg";
-import { containerVariants } from "@/app/helpers/helperFuncs";
-import { socialIcons } from "@/app/helpers/mockData";
+import { containerVariants } from "@/lib/helpers/helperFuncs";
+import { socialIcons } from "@/lib/helpers/mockData";
 
 interface ContactFormProps {
   setStep: React.Dispatch<React.SetStateAction<number>>;

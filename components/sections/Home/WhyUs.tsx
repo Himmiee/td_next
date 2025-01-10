@@ -1,5 +1,5 @@
 import { InfoCard } from "@/components/forms/cards/formcard";
-import { whyTdData, whyUsData } from "@/app/helpers/mockData";
+import { whyTdData, whyUsData } from "@/lib/helpers/mockData";
 import { TechDiveCard } from "@/components/forms/cards/techCard";
 
 export const TechDiveComponentRight = () => {

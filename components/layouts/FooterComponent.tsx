@@ -2,7 +2,7 @@
 
 import logo from "../../app/assets/png/Logo Main.png";
 import Image from "next/image";
-import { NavData, socialIcons } from "@/app/helpers/mockData";
+import { NavData, socialIcons } from "@/lib/helpers/mockData";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
