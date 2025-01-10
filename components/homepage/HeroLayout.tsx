@@ -39,11 +39,6 @@ export const HeroLayout: React.FC<HeroLayoutProps> = ({
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  const buttonVariants = {
-    hover: { scale: 1.05 },
-    tap: { scale: 0.95 },
-  };
-
   return (
     <main className="min-h-[400px] h-screen max-h-[600px] relative w-full">
       <section className="relative w-full h-full flex justify-center items-center">
