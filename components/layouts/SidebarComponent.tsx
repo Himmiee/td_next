@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { AiOutlineClose } from "react-icons/ai";
 import smallImg from "../../app/assets/png/L.png";
 import { Button } from "../ui/button";
-import { NavData } from "@/app/helpers/mockData";
+import { NavData } from "@/lib/helpers/mockData";
 import Link from "next/link";
 import { useEffect } from "react";
 

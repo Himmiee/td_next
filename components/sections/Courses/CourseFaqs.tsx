@@ -1,4 +1,4 @@
-import { coursesFaqs } from "@/app/helpers/mockData";
+import { coursesFaqs } from "@/lib/helpers/mockData";
 import Accordion from "@/components/layouts/accordion";
 
 export const CourseFaqs = () => {

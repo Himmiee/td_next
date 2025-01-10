@@ -81,9 +81,9 @@ export const AboutFounderSection = () => {
             <Button className="bg-YellowBtnColor px-6 py-2 h-12 xl:w-48 w-full font-medium rounded-lg">
               Get Started
             </Button>
-            <Button className="bg-white text-black px-6 py-2 h-12 xl:w-56 xl:shadow w-full font-medium rounded-lg">
+            {/* <Button className="bg-white text-black px-6 py-2 h-12 xl:w-56 xl:shadow w-full font-medium rounded-lg">
               Take the Career Quiz
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

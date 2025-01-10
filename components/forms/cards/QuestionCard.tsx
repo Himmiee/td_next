@@ -1,6 +1,6 @@
 "use client"
 
-import { bulletPoints } from "@/app/helpers/mockData";
+import { bulletPoints } from "@/lib/helpers/mockData";
 import { useRouter } from "next/navigation";
 // import { FaX } from "react-icons/fa6";
 import { IoMdArrowForward } from "react-icons/io";

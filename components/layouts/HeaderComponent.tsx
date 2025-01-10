@@ -6,7 +6,7 @@ import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import img from "../../app/assets/png/L.png";
 // import imgLight from "@/public/images/logo.svg";
 import { Button } from "../ui/button";
-import { NavData } from "@/app/helpers/mockData";
+import { NavData } from "@/lib/helpers/mockData";
 import Link from "next/link";
 import SidebarComponent from "./SidebarComponent";
 import { useEffect, useState } from "react";
