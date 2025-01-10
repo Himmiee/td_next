@@ -22,10 +22,10 @@ const Projects = () => {
   return (
     <section className=" my-14">
       {/* Header Section */}
-      <div className="flex justify-between items-center mb-12">
-        <div className=" w-1/2">
+      <div className="flex flex-col justify-between items-center mb-12">
+        <div className=" lg:w-1/2">
           <h2 className="text-3xl font-bold text-gray-800">Projects</h2>
-          <p className="text-gray-600 mt-8">
+          <p className="text-gray-600 mt-8 lg:mb-0 mb-5">
             With every project, we explore the introduction of a healthy mix of
             soft and hard landscaping. We believe this is essential for the
             delivery of a well-designed and delivered space that fosters
@@ -59,9 +59,9 @@ const Projects = () => {
             <div className="absolute inset-0 bg-black/50"></div>
 
             {/* Content */}
-            <div className="absolute inset-0 flex items-center justify-between px-6">
+            <div className="absolute inset-0 flex lg:flex-row flex-col items-center lg:justify-between justify-center px-6">
               {/* Left: Title */}
-              <div className=" bg-white flex w-[50%] h-16 items-center justify-between px-5 py-3">
+              <div className=" bg-white flex  lg:w-[50%] w-full mb-5 lg:mb-0  h-16 items-center justify-between px-5 py-3">
                 <div className=" text-2xl font-semibold">{project.title}</div>
 
                 <div className=" text-xl">
@@ -72,7 +72,7 @@ const Projects = () => {
               </div>
 
               {/* Right: Description */}
-              <div className="text-white flex space-x-9 pl-20 w-[50%]">
+              <div className="text-white flex space-x-9 lg:pl-20 lg:w-[50%] w-full">
                 <p className="font-medium">{project.tag1}</p>
                 <p className="font-medium">{project.tag2}</p>
               </div>
