@@ -18,7 +18,7 @@ const Newsletter = () => {
             className="absolute right-1 top-1/2 -translate-y-1/2 bg-primary-100 text-white rounded-full w-10 h-10 flex items-center justify-center  focus:outline-none"
           >
             <Image
-              src={"/assets/icons/newsletter-logo.svg"}
+              src={"/icons/newsletter-logo.svg"}
               height={20}
               width={20}
               alt="newsletter logo"

@@ -7,25 +7,25 @@ const services = [
     title: "Building Extension",
     description:
       "On every extension project, our team of professionals and craftsmen work tirelessly and mindfully to achieve our client’s vision outlined in their brief and then bring it to life with its related aesthetics.",
-    image: "/path-to-extension-image.jpg", // Replace with your image path
+    image: "/images/homepage/services-1.jpg", // Replace with your image path
   },
   {
     title: "Building Refurbishment",
     description:
       "On all of our refurbishment projects, we ensure our craftsmen deliver high-quality workmanship to the client’s satisfaction. Some refurbishment projects include remodelling a kitchen, rejuvenating internal spaces, and updating wooden doors and related joinery.",
-    image: "/path-to-refurbishment-image.jpg", // Replace with your image path
+    image: "/images/homepage/services-2.jpg", // Replace with your image path
   },
   {
     title: "Building Conversion",
     description:
       "Our specialist teams responsible for conversion projects have a wealth of experience working through and resolving challenges typically faced when converting the use and layout of a given space.",
-    image: "/path-to-conversion-image.jpg", // Replace with your image path
+    image: "/images/homepage/services-3.jpg", // Replace with your image path
   },
   {
     title: "New Development",
     description:
       "Our offer and delivery of building management services for owners and operators of private and commercial properties guarantee that our client’s mind can remain at ease whilst our team of professionals and craftsmen address the day-to-day property needs.",
-    image: "/path-to-development-image.jpg", // Replace with your image path
+    image: "/images/homepage/services-4.jpg", // Replace with your image path
   },
 ];
 
@@ -57,7 +57,7 @@ const Services = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="relative h-80 rounded-lg overflow-hidden shadow-lg group"
+            className="relative h-96  overflow-hidden shadow-lg group"
           >
             {/* Background Image */}
             <Image

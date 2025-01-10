@@ -24,10 +24,10 @@
 // };
 
 import React from "react";
-import homeherobg from "@/public/assets/images/homepage/home-hero-bg.jpg";
-import instagramImg from "@/public/assets/icons/instagram.svg";
-import twitterImg from "@/public/assets/icons/twitter.svg";
-import facebookImg from "@/public/assets/icons/facebook.svg";
+import homeherobg from "@/public/images/homepage/home-hero-bg.jpg";
+import instagramImg from "@/public/icons/instagram.svg";
+import twitterImg from "@/public/icons/twitter.svg";
+import facebookImg from "@/public/icons/facebook.svg";
 import { HeroLayout } from "./HeroLayout";
 
 export const HeroSection: React.FC = () => {
