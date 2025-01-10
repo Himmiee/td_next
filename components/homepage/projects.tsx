@@ -5,13 +5,16 @@ import Image from "next/image";
 const projects = [
   {
     title: "Farringdon",
-    description: "Complete Refurbishment  Interior Design",
-    image: "/path-to-farringdon-image.jpg", // Replace with your image path
+    tag1: "Complete Refurbishment ",
+    tag2: "Interior Design",
+
+    image: "/images/homepage/project-1.jpg", // Replace with your image path
   },
   {
     title: "Finsbury Park",
-    description: "Garage Conversion  Interior Design",
-    image: "/path-to-finsbury-park-image.jpg", // Replace with your image path
+    tag1: "Garage Conversion ",
+    tag2: "Interior Design",
+    image: "/images/homepage/project-2.jpg", // Replace with your image path
   },
 ];
 
@@ -42,7 +45,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="relative h-96 rounded-lg overflow-hidden shadow-lg group"
+            className="relative h-96  overflow-hidden shadow-lg group"
           >
             {/* Background Image */}
             <Image
@@ -58,20 +61,20 @@ const Projects = () => {
             {/* Content */}
             <div className="absolute inset-0 flex items-center justify-between px-6">
               {/* Left: Title */}
-              <div className="text-white text-2xl font-semibold">
-                {project.title}
-              </div>
+              <div className=" bg-white flex w-[50%] h-16 items-center justify-between px-5 py-3">
+                <div className=" text-2xl font-semibold">{project.title}</div>
 
-              {/* Center: Icon */}
-              <div className="text-white text-xl">
-                <span className="flex items-center justify-center w-10 h-10 border border-white rounded-full">
-                  →
-                </span>
+                <div className=" text-xl">
+                  <span className="flex items-center justify-center w-10 h-10 ">
+                    →
+                  </span>
+                </div>
               </div>
 
               {/* Right: Description */}
-              <div className="text-white text-right">
-                <p className="font-medium">{project.description}</p>
+              <div className="text-white flex space-x-9 pl-20 w-[50%]">
+                <p className="font-medium">{project.tag1}</p>
+                <p className="font-medium">{project.tag2}</p>
               </div>
             </div>
           </div>
