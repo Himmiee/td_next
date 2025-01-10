@@ -1,3 +1,4 @@
+import GridSection from "@/components/homepage/GridSection";
 import { HeroSection } from "@/components/homepage/hero-section";
 import Services from "@/components/homepage/main-services";
 import Projects from "@/components/homepage/projects";
@@ -11,6 +12,7 @@ export default function Home() {
         <Services />
         <Projects />
       </div>
+      <GridSection />
     </main>
   );
 }
