@@ -18,17 +18,17 @@ export const SERVICES_LEFT = [
     {
       name: 'Twitter',
       href: 'https://twitter.com/pearlprojects',
-      icon: 'Twitter'
+      icon: '/icons/twitter-footer.svg'
     },
     {
       name: 'Facebook',
       href: 'https://facebook.com/pearlprojects',
-      icon: 'Facebook'
+      icon: '/icons/facebook-footer.svg'
     },
     {
       name: 'Instagram',
       href: 'https://instagram.com/pearlprojects',
-      icon: 'Instagram'
+      icon: '/icons/instagram-footer.svg'
     }
   ] as const
   

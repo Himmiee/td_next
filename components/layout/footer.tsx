@@ -1,17 +1,18 @@
 import { CONTACT_INFO, SERVICES_LEFT, SERVICES_RIGHT } from "@/lib/constants";
-import Newsletter from "../newsletter-form";
-import { ServicesList } from "../services-list";
-import { SocialLinks } from "../social-links";
-import { TrustedLogos } from "../trusted-logos";
+import Newsletter from "../footer/newsletter-form";
+import { ServicesList } from "../footer/services-list";
+import { SocialLinks } from "../footer/social-links";
+import { TrustedLogos } from "../footer/trusted-logos";
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
+import Image from "next/image";
+// import { Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
     <div className="w-full">
       <Newsletter />
       <footer className="bg-primary-60 w-full">
-        <div className="auto-container w-full">
+        <div className="auto-container w-full py-20">
           {/* Main Footer Content */}
           <div className="flex flex-wrap lg:flex-nowrap w-full gap-y-8">
             {/* Trusted By Section */}
@@ -26,18 +27,31 @@ export default function Footer() {
               <div className="space-y-4">
                 <Link
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="flex items-center gap-3 text-sm hover:text-primary-100 transition-colors"
+                  className="flex items-center gap-4 text-sm hover:text-primary-100 transition-colors"
                 >
-                  <Mail className="h-4 w-4 text-primary-100" />
+                  {/* <Mail className="h-4 w-4 text-primary-100" /> */}
+                  <Image
+                    src="/icons/envelope-footer.svg"
+                    alt="Mail"
+                    width={15}
+                    height={15}
+                  />
+
                   {CONTACT_INFO.email}
                 </Link>
                 {CONTACT_INFO.phones.map((phone) => (
                   <Link
                     key={phone}
                     href={`tel:${phone.replace(/\s+/g, "")}`}
-                    className="flex items-center gap-3 text-sm hover:text-primary-100 transition-colors"
+                    className="flex items-center gap-4 text-sm hover:text-primary-100 transition-colors"
                   >
-                    <Phone className="h-4 w-4 text-primary-100" />
+                    {/* <Phone className="h-4 w-4 text-primary-100" /> */}
+                    <Image
+                      src="/icons/phone-footer.svg"
+                      alt="Mail"
+                      width={15}
+                      height={15}
+                    />
                     {phone}
                   </Link>
                 ))}

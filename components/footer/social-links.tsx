@@ -1,25 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import {
-  Facebook,
-  Instagram,
-  Twitter,
-  TypeIcon as type,
-  LucideIcon,
-} from "lucide-react";
+
 import Link from "next/link";
 import { SOCIAL_LINKS } from "@/lib/constants";
-
-const iconMap: Record<string, LucideIcon> = {
-  Twitter,
-  Facebook,
-  Instagram,
-};
+import Image from "next/image";
 
 export function SocialLinks() {
   return (
     <div className="flex gap-10 pt-4">
       {SOCIAL_LINKS.map(({ name, href, icon }) => {
-        const Icon = iconMap[icon];
+        // const Icon = iconMap[icon];
         return (
           <Link
             key={name}
@@ -27,7 +16,7 @@ export function SocialLinks() {
             className="text-gray-100 hover:text-primary-60 transition-colors"
             aria-label={`Follow us on ${name}`}
           >
-            <Icon className="h-6 w-6  " fill="black" />
+            <Image src={icon} alt={name} width={18} height={18} />
           </Link>
         );
       })}
