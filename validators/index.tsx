@@ -31,3 +31,26 @@ export const qouteFormSchema = z.object({
     })
     .nullable(),
 });
+
+export const contactFormSchema = z.object({
+  name: z.string().min(2, {
+    message: "name must be at least 2 characters.",
+  }),
+  phone: z.string().min(10, {
+    message: "Invalid phone number.",
+  }),
+  email: z.string().email({
+    message: "Invalid email address.",
+  }),
+  document: z
+    .custom<File>((value) => value instanceof File, {
+      message: "Please upload a valid file.",
+    })
+    .nullable(),
+  message: z.string().min(10, {
+    message: "Message must be at least 10 characters.",
+  }),
+  agreement: z.boolean({
+    message: "Please agree to the terms and conditions.",
+  }),
+});
