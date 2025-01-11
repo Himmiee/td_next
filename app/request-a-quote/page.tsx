@@ -22,6 +22,8 @@ const RequestQuote = () => {
           />
         </div>
 
+      
+
         {/* Form Section */}
         <div className="flex-grow p-4">
           <QouteForm />

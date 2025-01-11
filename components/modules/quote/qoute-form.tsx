@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/select";
 import { Countries, ProjectType } from "@/data";
 import { Calendar } from "@/components/ui/calendar";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, ChevronsUpDown, Check } from "lucide-react";
 import {
   Popover,
   PopoverContent,
@@ -34,6 +34,16 @@ import {
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { InputFile } from "@/components/custom/fileinput";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import CountrySelect from "@/components/custom/country-select";
 
 const QouteForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -126,27 +136,11 @@ const QouteForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Country</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
-                  <FormControl>
-                    <SelectTrigger className="h-[46px]">
-                      <SelectValue placeholder="Nigeria" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {Countries.map((country, index) => (
-                      <SelectItem
-                        className="cursor-pointer"
-                        key={index}
-                        value={country}
-                      >
-                        {country}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <CountrySelect
+                  value={field.value}
+                  onChange={(value) => field.onChange(value)}
+                  countries={Countries} // Pass your countries array here
+                />
                 <FormMessage />
               </FormItem>
             )}
@@ -266,7 +260,10 @@ const QouteForm = () => {
             )}
           />
 
-          <Button type="submit" className="w-full h-[52px] text-[16px] bg-[#2B2F84]">
+          <Button
+            type="submit"
+            className="w-full h-[52px] text-[16px] bg-[#2B2F84]"
+          >
             REQUEST A QUOTE
           </Button>
         </form>
