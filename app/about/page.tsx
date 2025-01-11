@@ -4,17 +4,18 @@
 // import Projects from "@/components/homepage/projects";
 // import { Button } from "@/components/ui/button";
 
+import GallerySection from "@/components/about/gallery-section";
 import { HeroSection } from "@/components/about/hero-section";
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
-      {/* <div className="auto-container">
-        <Services />
-        <Projects />
+      <div className="auto-container">
+        <GallerySection />
+        {/* <Projects /> */}
       </div>
-      <GridSection /> */}
+      {/* <GridSection /> */}
     </main>
   );
 }
