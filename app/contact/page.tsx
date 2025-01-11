@@ -20,7 +20,7 @@ const ContactPage = () => {
         <h3 className="text-[#4D5886] text-3xl font-medium">CONTACT</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 md:justify-center gap-6 my-10">
           {/* First Card */}
-          <div className="bg-[#2B2F84] p-9 pt-12 min-h-[488px] text-white">
+          <div className="hover:bg-[#2B2F84] p-9 pt-12 min-h-[488px] hover:text-white transition-all duration-100">
             <Image
               src={ContactImage1}
               alt="contact image"
