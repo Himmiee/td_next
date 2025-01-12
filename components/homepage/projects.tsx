@@ -22,7 +22,7 @@ const Projects = () => {
   return (
     <section className=" my-14">
       {/* Header Section */}
-      <div className="flex flex-col justify-between items-center mb-12">
+      <div className="flex flex-col lg:flex-row justify-between items-center mb-12">
         <div className=" lg:w-1/2">
           <h2 className="text-3xl font-bold text-gray-800">Projects</h2>
           <p className="text-gray-600 mt-8 lg:mb-0 mb-5">
