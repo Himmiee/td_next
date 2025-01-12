@@ -34,28 +34,31 @@ const ProcessGallery: React.FC = () => {
   };
 
   return (
-    <section className="w-full py-16 auto-container">
-      <div className=" mb-8">
-        <h2 className="text-4xl font-medium  text-primary-80">THE PROCESS</h2>
+    <section className="w-full py-16">
+      {/* Title */}
+      <div className="mb-8 ">
+        <h2 className="text-4xl font-medium text-primary-80">THE PROCESS</h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 md:px-0">
+
+      {/* Image Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
         {images.map((image, index) => (
           <div
             key={index}
-            className="relative group bg-gray-100  overflow-hidden md:w-[470px] md:h-[296px] w-full h-full"
+            className="relative group bg-gray-100  overflow-hidden w-full h-[200px] md:h-[250px] lg:h-[270px]"
           >
             <Image
               src={image.src}
               alt={image.alt}
-              width={425}
-              height={296}
+              width={350}
+              height={300}
               className="w-full h-full object-cover"
             />
             <div
               className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"
               onClick={() => handleImageClick(image.src)}
             >
-              <Image src={lockIcon} alt="Locked" className="w-12 h-12" />
+              <Image src={lockIcon} alt="Locked" className="w-10 h-10" />
             </div>
           </div>
         ))}
@@ -65,14 +68,14 @@ const ProcessGallery: React.FC = () => {
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleCloseModal}
           >
             <motion.div
-              className="relative bg-white rounded-lg shadow-lg overflow-hidden w-[90%] max-w-5xl h-[80vh]"
+              className="relative bg-white rounded-lg shadow-lg overflow-hidden w-[95%] max-w-6xl h-[90vh]"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
