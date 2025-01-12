@@ -177,38 +177,6 @@ export default function AboutDetails() {
             </li>
           ))}
         </ul>
-        <ul className="space-y-2">
-          {menuItems.map((item) => (
-            <li key={item.id}>
-              <button
-                onClick={() => setActiveItem(item.id)}
-                className={`w-full text-left px-4 py-2  transition-colors ${
-                  activeItem === item.id
-                    ? "border-l-2 border-primary-100 text-primary-100 font-medium"
-                    : "text-gray-600 hover:bg-gray-50"
-                }`}
-              >
-                {item.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-        <ul className="space-y-2">
-          {menuItems.map((item) => (
-            <li key={item.id}>
-              <button
-                onClick={() => setActiveItem(item.id)}
-                className={`w-full text-left px-4 py-2  transition-colors ${
-                  activeItem === item.id
-                    ? "border-l-2 border-primary-100 text-primary-100 font-medium"
-                    : "text-gray-600 hover:bg-gray-50"
-                }`}
-              >
-                {item.label}
-              </button>
-            </li>
-          ))}
-        </ul>
       </nav>
 
       {/* Main Content */}
