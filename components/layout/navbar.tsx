@@ -102,7 +102,7 @@ const Navbar = () => {
         <div className="w-full flex flex-row items-center justify-between bg-white xl:px-32 lg:px-10 px-4  h-20">
           <Link href="/">
             <Image
-              src="/assets/logos/Pearl_logo.png"
+              src="/logos/Pearl_logo.png"
               alt="Pearl logo"
               width={80}
               height={60}
