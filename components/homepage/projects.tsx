@@ -1,6 +1,7 @@
 // pages/projects.tsx
 
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -61,7 +62,11 @@ const Projects = () => {
             {/* Content */}
             <div className="absolute inset-0 flex lg:flex-row flex-col items-center lg:justify-between justify-center px-6">
               {/* Left: Title */}
-              <div className=" bg-white flex  lg:w-[50%] w-full mb-5 lg:mb-0  h-16 items-center justify-between px-5 py-3">
+              <Link
+                href={`/projects/${1}`}
+                className="bg-white flex  lg:w-[50%] w-full  mb-5 lg:mb-0  h-16 items-center justify-between px-5 py-3"
+              >
+                {/* <div className=" "> */}
                 <div className=" text-2xl font-semibold">{project.title}</div>
 
                 <div className=" text-xl">
@@ -69,7 +74,8 @@ const Projects = () => {
                     →
                   </span>
                 </div>
-              </div>
+                {/* </div> */}
+              </Link>
 
               {/* Right: Description */}
               <div className="text-white flex space-x-9 lg:pl-20 lg:w-[50%] w-full">
