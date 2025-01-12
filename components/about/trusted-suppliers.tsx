@@ -18,9 +18,9 @@ const TrustedSuppliers: React.FC = () => {
           TRUSTED SUPPLIERS
         </h2>
       </div>
-      <section className="w-full py-16 mb-16 auto-container">
+      <section className="w-full lg:py-16 py-8 lg:mb-16 mb-8 auto-container">
         {/* Suppliers Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4  mx-auto px-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:gap-4 gap-10  mx-auto lg:px-4 px-10">
           {/* Supplier 1 */}
           <div className="flex justify-center items-center">
             <Image
