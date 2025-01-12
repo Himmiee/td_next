@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function SocialLinks() {
   return (
-    <div className="flex gap-10 pt-4">
+    <div className="flex gap-10 lg:justify-start lg:items-start justify-center items-center pt-4">
       {SOCIAL_LINKS.map(({ name, href, icon }) => {
         // const Icon = iconMap[icon];
         return (
