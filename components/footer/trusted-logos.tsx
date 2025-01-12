@@ -2,15 +2,15 @@ import Image from "next/image";
 
 const LOGOS = [
   {
-    src: "/assets/logos/master_logo.png",
+    src: "/logos/master_logo.png",
     alt: "Federation of Master Builders",
   },
   {
-    src: "/assets/logos/Trustatrader_Logo.png",
+    src: "/logos/Trustatrader_Logo.png",
     alt: "Certification Logo",
   },
   {
-    src: "/assets/logos/Rate_People_Logo.png",
+    src: "/logos/Rate_People_Logo.png",
     alt: "Rated People",
   },
 ] as const;
