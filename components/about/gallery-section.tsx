@@ -23,7 +23,7 @@ const GallerySection: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6  mx-auto px-4">
         {/* Image 1 */}
         <div className="relative h-64 md:h-80 group">
-          <div className="absolute inset-0 border-4 border-transparent group-hover:border-orange-500 transition-all duration-300"></div>
+          <div className="absolute inset-0 border-4 border-transparent group-hover:border-[#D0802B] transition-all duration-300"></div>
           <Image
             src={galleryImg1}
             alt="Gallery Image 1"
@@ -33,7 +33,7 @@ const GallerySection: React.FC = () => {
 
         {/* Image 2 */}
         <div className="relative h-64 md:h-80 group">
-          <div className="absolute inset-0 border-4 border-transparent group-hover:border-orange-500 transition-all duration-300"></div>
+          <div className="absolute inset-0 border-4 border-transparent group-hover:border-[#D0802B] transition-all duration-300"></div>
           <Image
             src={galleryImg2}
             alt="Gallery Image 2"
@@ -43,7 +43,7 @@ const GallerySection: React.FC = () => {
 
         {/* Image 3 */}
         <div className="relative h-64 md:h-80 group">
-          <div className="absolute inset-0 border-4 border-transparent group-hover:border-orange-500 transition-all duration-300"></div>
+          <div className="absolute inset-0 border-4 border-transparent group-hover:border-[#D0802B] transition-all duration-300"></div>
           <Image
             src={galleryImg3}
             alt="Gallery Image 3"
@@ -53,7 +53,7 @@ const GallerySection: React.FC = () => {
 
         {/* Image 4 */}
         <div className="relative h-64 md:h-80 group">
-          <div className="absolute inset-0 border-4 border-transparent group-hover:border-orange-500 transition-all duration-300"></div>
+          <div className="absolute inset-0 border-4 border-transparent group-hover:border-[#D0802B] transition-all duration-300"></div>
           <Image
             src={galleryImg4}
             alt="Gallery Image 4"
