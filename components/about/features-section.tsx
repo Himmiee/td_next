@@ -6,11 +6,11 @@ import Image from "next/image";
 const FeaturesSection: React.FC = () => {
   return (
     <section className="w-full py-16">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className=" mx-auto px-4">
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Feature 1 */}
-          <div className="border rounded-lg p-6 text-center md:text-left bg-white hover:bg-primary-100 transition duration-300 group">
+          <div className="border rounded-lg p-6  md:text-left bg-white hover:bg-primary-100 transition duration-300 group">
             <div className=" mb-4">
               <Image
                 src={LabourConsultingDark}
@@ -38,7 +38,7 @@ const FeaturesSection: React.FC = () => {
           </div>
 
           {/* Feature 2 */}
-          <div className="border rounded-lg p-6 text-center md:text-left bg-white hover:bg-primary-100 transition duration-300 group">
+          <div className="border rounded-lg p-6  md:text-left bg-white hover:bg-primary-100 transition duration-300 group">
             <div className=" mb-4">
               <Image
                 src={LabourConsultingDark}
@@ -65,7 +65,7 @@ const FeaturesSection: React.FC = () => {
           </div>
 
           {/* Feature 3 */}
-          <div className="border rounded-lg p-6 text-center md:text-left bg-white hover:bg-primary-100 transition duration-300 group">
+          <div className="border rounded-lg p-6  md:text-left bg-white hover:bg-primary-100 transition duration-300 group">
             <div className=" mb-4">
               <Image
                 src={LabourConsultingDark}

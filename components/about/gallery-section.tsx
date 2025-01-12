@@ -13,7 +13,7 @@ const GallerySection: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
           GALLERY
         </h2>
-        <p className="text-gray-600 mt-2 text-sm md:text-base w-[40%] mx-auto">
+        <p className="text-gray-600 mt-2 text-sm md:text-base lg:w-[40%] w-full mx-auto">
           We carry out various types of projects, from minor refurbishment works
           to completing a new build development.
         </p>
