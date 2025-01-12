@@ -225,9 +225,9 @@ export default function AboutDetails() {
                 personalised and professional services to its client. We place a
                 premium on the relationships we form and grow with our clients
                 and service partners. Our placing a premium on our interaction
-                with clients and service partnerships helps us build mutual
-                trust for all parties. This helps ensure our projects run
-                smoothly and with minimal disruptions.
+                with clients and service partners helps us build mutual trust
+                for all parties. This helps ensure our projects can run smoothly
+                and with minimal disruptions.
               </p>
               <p>
                 Also, given the combination of our architectural and project
@@ -236,6 +236,28 @@ export default function AboutDetails() {
                 achieve this by directing our energies towards delivering
                 residential and commercial property developments with the
                 outstanding in quality and standard.
+              </p>
+              <p>
+                Furthermore, we can provide an end-to-end service to our
+                customers. At the client's request, we facilitate and coordinate
+                the design process and deliver the project as a turnkey
+                development. Our project managers work closely with the client
+                throughout a project, starting with the initial consultation
+                process until handover shortly after completion.
+              </p>
+              <p>
+                We aim to deliver value for money and are immensely proud of our
+                heritage of exceptional craftsmanship and impeccable project
+                insight provided by our team of professionals. We believe in the
+                mantra, 'putting the customer first', and practice this in our
+                client engagements. We insist that all our developments and
+                projects are handled with the same level of care and importance
+                that a client will ascribe to the project, prompting our
+                client's desire to feel the Pearl Projects' touch.
+              </p>
+              <p>
+                Pearl Projects & Developments is active on project sites across
+                London and in most regions across Greater London.
               </p>
             </div>
           </section>
