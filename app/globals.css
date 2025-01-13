@@ -40,6 +40,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -81,4 +82,8 @@ body {
   .auto-container {
     @apply w-11/12 2xl:max-w-[1440px] mx-auto;
   }
+}
+
+.about-details section {
+  scroll-margin-top: 80px;
 }
