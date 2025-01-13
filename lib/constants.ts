@@ -18,25 +18,25 @@ export const SERVICES_LEFT = [
     {
       name: 'Twitter',
       href: 'https://twitter.com/pearlprojects',
-      icon: 'Twitter'
+      icon: '/icons/twitter-footer.svg'
     },
     {
       name: 'Facebook',
       href: 'https://facebook.com/pearlprojects',
-      icon: 'Facebook'
+      icon: '/icons/facebook-footer.svg'
     },
     {
       name: 'Instagram',
       href: 'https://instagram.com/pearlprojects',
-      icon: 'Instagram'
+      icon: '/icons/instagram-footer.svg'
     }
   ] as const
   
   export const CONTACT_INFO = {
     email: 'info@pearl-projects.com',
     phones: [
-      '+44 (0)1078 350 00705',
-      '+234 (0)080 235 178605'
+      '+44 (0) 1078 350 00705',
+      '+234 (0) 080 235 178605'
     ]
   } as const
   
