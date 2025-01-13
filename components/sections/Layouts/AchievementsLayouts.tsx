@@ -6,12 +6,12 @@ import pmListImg from "@/public/images/services/png/project-management-list 1.pn
 
 export const AchievementLayout = () => {
   return (
-    <section className="w-full pt-12">
-      <div className="container mx-auto">
+    <section className="w-full  ">
+      <div className="container  w-full">
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center lg:space-x-24 items-st w-full ">
           {/* Purple Box */}
-          <div className="bg-[#2B2F84] text-white h-64 flex items-center justify-center space-x-4  md:space-x-36">
+          <div className="bg-[#2B2F84]  text-white h-64 flex items-center justify-center space-x-4  md:space-x-36">
             <h3 className="text-xl font-medium mb-4">Experienced team</h3>
             {/* White Border Box with 200+ */}
             <div className="border-[24px] p-6 border-l-0 border-white   text-center text-4xl font-bold">
@@ -20,7 +20,7 @@ export const AchievementLayout = () => {
           </div>
 
           {/* Images Section */}
-          <div className="flex gap-24 items-center h-44 justify-center">
+          <div className="flex gap-24 lg:gap-48 items-center h-44 justify-center">
             <div className="bg-[#2B2F84] w-32 h-32 lg:h-full lg:w-44 flex items-center justify-center">
               <Image
                 src={pmListImg}
