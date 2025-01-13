@@ -4,11 +4,13 @@ import { ContactFormLayout } from "@/components/sections/Layouts/ContactLayout";
 
 const ProjectManagementPage: React.FC = () => {
   return (
-    <>
+    <section className="">
       <GeneralContructorHeroSection />
-      <GMServices />
-      <ContactFormLayout />
-    </>
+      <section className="space-y-6 lg:space-y-16">
+        <GMServices />
+        <ContactFormLayout />
+      </section>
+    </section>
   );
 };
 

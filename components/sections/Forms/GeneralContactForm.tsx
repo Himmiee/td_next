@@ -67,7 +67,7 @@ export const GeneralContactForm: React.FC = () => {
           </div>
           <Button
             type="submit"
-            className="w-full bg-[#2B2F84] text-white rounded-none"
+            className="w-full bg-[#2B2F84] hover:bg-[#2B2F84]/90 text-white rounded-none"
           >
             Submit
           </Button>

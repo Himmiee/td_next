@@ -12,14 +12,17 @@ import { ProjectManangementHeroSection } from "@/components/sections/ProjectMana
 
 const ProjectManagementPage: React.FC = () => {
   return (
-    <section className="space-y-2 md:space-y-24">
+    <section className="space-y-2 md:space-y-24 ">
       <ProjectManangementHeroSection />
-      <PMDetailSection />
-      <PMTimeLineSection />
-      <PMReverseDetailSection />
-      <section>
-        <AchievementLayout />
-        <AchievementBottomLayout />
+      <section className="space-y-2 md:space-y-24 p-4 lg:auto-container lg:p-0">
+        {" "}
+        <PMDetailSection />
+        <PMTimeLineSection />
+        <PMReverseDetailSection />
+        <section>
+          <AchievementLayout />
+          <AchievementBottomLayout />
+        </section>
       </section>
       <ContactFormLayout />
     </section>

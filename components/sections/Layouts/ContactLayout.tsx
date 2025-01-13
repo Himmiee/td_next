@@ -17,7 +17,7 @@ export const ContactFormLayout: React.FC = () => {
       </div>
 
       {/* Right Side - Cap Image and Contact Form */}
-      <div className="col-span-2 flex flex-col h-full px-4 sm:px-20 lg:px-36 lg:pr-44 lg:space-y-10">
+      <div className="col-span-2 flex flex-col h-full px-4 sm:px-20 lg:px-32 lg:space-y-10">
         {/* Cap Image */}
         <div className="lg:flex justify-center items-center hidden">
           <Image
