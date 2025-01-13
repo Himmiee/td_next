@@ -46,7 +46,7 @@ const Services = () => {
         </div>
         <button
           type="button"
-          className="bg-primary-100 hover:opacity-90 transform transition duration-200 hover:shadow-md flex items-center justify-center gap-1.5 font-poppins w-[199px] h-[59px] text-white -tracking-[3%] font-bold"
+          className="bg-primary-100 lg:mt-0 mt-7 hover:opacity-90 transform transition duration-200 hover:shadow-md flex items-center justify-center gap-1.5 font-poppins w-[199px] h-[59px] text-white -tracking-[3%] font-bold"
         >
           Our Offer
         </button>

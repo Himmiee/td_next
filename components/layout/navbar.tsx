@@ -269,11 +269,11 @@ const Navbar = () => {
                   ))}
 
                   {/* CONTACT BUTTON */}
-                  <div className="flex justify-center mt-8">
+                  <div className="flex justify-center mt-8 absolute bottom-10">
                     <Link href="/contact">
                       <button
                         type="button"
-                        className="bg-primary-100 hover:opacity-90 transform transition duration-200 hover:shadow-md flex items-center justify-center gap-1.5 font-poppins w-[199px] h-[59px] text-white -tracking-[3%] font-bold"
+                        className="bg-primary-100 hover:opacity-90 transform transition duration-200 hover:shadow-md flex items-center justify-center gap-1.5 font-poppins w-[250px] h-[59px] text-white -tracking-[3%] font-bold"
                       >
                         CONTACT
                       </button>
