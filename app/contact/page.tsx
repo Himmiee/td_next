@@ -7,17 +7,29 @@ import ContactImage2 from "@/public/images/contact2.jpeg";
 import ContactImage3 from "@/public/images/contact3.jpeg";
 import { Button } from "@/components/ui/button";
 import ContactForm from "@/components/modules/contact/contact-form";
-import ContactMap from "@/components/modules/contact/map";
+import dynamic from "next/dynamic";
+
+// Dynamic import of the Map component
+const ContactMap = dynamic(() => import("@/components/modules/contact/map"), {
+  ssr: false,
+});
+
+
 
 const ContactPage = () => {
   return (
     <div>
-      {/* latter change to real Map */}
-      <ContactMap />
+      {/* Map Section */}
+      <ContactMap
+        lat={51.505}
+        lng={-0.09}
+        zoom={13}
+        location={"Pearl Projects"}
+      />
 
       {/* cards */}
-      <div className="container mx-auto my-20">
-        <h3 className="text-[#4D5886] text-3xl font-medium">CONTACT</h3>
+      <div className="container mx-auto my-20 ">
+        <h3 className="text-[#4D5886] text-3xl font-medium ml-6 md:ml-0">CONTACT</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 md:justify-center gap-6 my-10">
           {/* First Card */}
           <div className="hover:bg-[#2B2F84] p-9 pt-12 min-h-[488px] hover:text-white transition-all duration-100">
@@ -72,7 +84,7 @@ const ContactPage = () => {
 
       {/* the form */}
       <div className="flex flex-col md:flex-row my-24">
-        <div className="w-full md:w-[40%] min-h-[400px] md:min-h-[869px]">
+        <div className="w-full md:w-[40%] md:min-h-[869px]">
           <Image
             src={QuoteFormImage}
             alt="form Image"
@@ -81,16 +93,15 @@ const ContactPage = () => {
         </div>
 
         {/* Form Section */}
-        <div className="flex-grow p-4">
+        <div className="flex-grow p-6">
           <ContactForm />
         </div>
       </div>
 
       {/* Our Team */}
-      <div className="container mx-auto my-20">
+      <div className="container px-5 md:px-0 mx-auto my-20">
         <h3 className="text-[#4D5886] text-3xl font-medium">OUR TEAM</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 md:justify-center gap-6 my-10">
-          
           {/* First Card */}
           <div className="border-l-4 border-[#2B2F84] p-9 pt-12 min-h-[241px]">
             <h3 className="text-2xl font-medium mb-4">PEARL PROJECT</h3>

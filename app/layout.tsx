@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/layout/footer";
 import Navbar from "@/components/layout/navbar";
 import Providers from "@/providers";
+import { Toaster } from "@/components/ui/toaster";
 
 const barlow = Barlow({
   subsets: ["latin"], // Choose the appropriate subsets, e.g., "latin"
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <Toaster />
         </Providers>
       </body>
     </html>

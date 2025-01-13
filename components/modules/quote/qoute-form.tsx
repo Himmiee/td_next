@@ -34,15 +34,6 @@ import {
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { InputFile } from "@/components/custom/fileinput";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import CountrySelect from "@/components/custom/country-select";
 
 const QouteForm = () => {
@@ -66,7 +57,7 @@ const QouteForm = () => {
   }
 
   return (
-    <div className="w-[604px] mx-auto">
+    <div className="max-w-[604px] mx-auto">
       <h4 className="mb-3 text-[24px] font-semibold">
         Contact you as soon as possible.
       </h4>

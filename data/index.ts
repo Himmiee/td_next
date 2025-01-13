@@ -1,3 +1,9 @@
+import axios from 'axios';
+
+export const Axiosinstance = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
+});
+
 export const Countries = [
   "Nigeria",
   "Ghana",

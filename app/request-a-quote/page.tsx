@@ -3,12 +3,13 @@ import QouteForm from "@/components/modules/quote/qoute-form";
 import QuoteFormImage from "@/public/images/quote 2.jpeg";
 import Image from "next/image";
 import React from "react";
+import QouteBackdropImage from "@/public/images/qoute 1.jpeg";
 
 const RequestQuote = () => {
   return (
     <div>
       <BannerWithOverlay
-        imageSrc={require("@/public/images/qoute 1.jpeg")}
+        imageSrc={QouteBackdropImage}
         title="Request a Quote"
         description="We carry out various types of projects, from minor refurbishment works to completing a new build development."
       />

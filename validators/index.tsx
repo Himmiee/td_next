@@ -54,3 +54,16 @@ export const contactFormSchema = z.object({
     message: "Please agree to the terms and conditions.",
   }),
 });
+
+
+export const testimonialSchema = z.object({
+  clientName: z.string().min(2, {
+    message: "name must be at least 2 characters.",
+  }),
+  projectType: z.string().min(2, {
+    message: "Invalid project type.",
+  }),
+  details: z.string().min(10, {
+    message: "Details must be at least 10 characters.",
+  }),
+});
