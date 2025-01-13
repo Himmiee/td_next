@@ -84,7 +84,7 @@ const ContactPage = () => {
 
       {/* the form */}
       <div className="flex flex-col md:flex-row my-24">
-        <div className="w-full md:w-[40%] md:min-h-[869px]">
+        <div className="hidden md:block w-full md:w-[40%] md:min-h-[869px]">
           <Image
             src={QuoteFormImage}
             alt="form Image"

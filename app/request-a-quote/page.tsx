@@ -15,7 +15,7 @@ const RequestQuote = () => {
       />
       <div className="flex flex-col md:flex-row my-20">
         {/* Left Image Section */}
-        <div className="w-full md:w-[40%] h-[400px] md:h-[1169px]">
+        <div className="hidden md:block w-full md:w-[40%] h-[400px] md:h-[1169px]">
           <Image
             src={QuoteFormImage}
             alt="form Image"

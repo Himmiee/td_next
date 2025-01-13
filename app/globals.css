@@ -79,3 +79,17 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.PhoneInput{
+  @apply rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors  placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm h-[46px];
+}
+
+
+.PhoneInputInput {
+  @apply border-0 focus-within:border-0 focus-visible:border-0 outline-none;
+}
+
+.PhoneInputCountryIcon--border {
+  @apply border-0 bg-transparent shadow-none focus-within:border-0 focus-visible:border-0 outline-none;
+}
+

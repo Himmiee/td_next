@@ -35,6 +35,7 @@ import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { InputFile } from "@/components/custom/fileinput";
 import CountrySelect from "@/components/custom/country-select";
+import CustomPhonenumberInput from "@/components/custom/Inputs/CustomPhonenumberInput";
 
 const QouteForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -45,7 +46,10 @@ const QouteForm = () => {
       phone: "",
       country: "",
       project_type: "",
-      estimated_budget: undefined,
+      estimated_budget: {
+        amount: 0,
+        currency: "USD",
+      },
       desired_start_date: new Date(),
       attachment: null,
     },
@@ -108,13 +112,10 @@ const QouteForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-[16px]">Phone number</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="+234 123 456 7890"
-                    {...field}
-                    className="h-[46px]"
-                  />
-                </FormControl>
+                <CustomPhonenumberInput
+                  value={field.value}
+                  onChange={field.onChange}
+                />
                 <FormMessage />
               </FormItem>
             )}
@@ -170,23 +171,58 @@ const QouteForm = () => {
             )}
           />
 
-          {/* estimated Budget */}
           <FormField
             control={form.control}
             name="estimated_budget"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[16px]">
-                  Estimated budget $
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="100000"
-                    {...field}
-                    className="h-[46px]"
-                    type="number"
-                  />
-                </FormControl>
+                <FormLabel>Estimated Budget</FormLabel>
+                <div className="flex items-center">
+                  {/* Currency Selector */}
+                  <Select
+                    onValueChange={(value) =>
+                      field.onChange({
+                        ...field.value,
+                        currency: value,
+                      })
+                    }
+                    value={field.value?.currency || ""}
+                  >
+                    <FormControl>
+                      <SelectTrigger className="h-[46px] w-[100px] mr-3">
+                        <SelectValue placeholder="USD" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {["USD", "EUR", "GBP", "JPY"].map((currency, index) => (
+                        <SelectItem
+                          className="cursor-pointer"
+                          key={index}
+                          value={currency}
+                        >
+                          {currency}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+
+                  
+                  {/* Amount Input */}
+                  <FormControl>
+                    <Input
+                      type="number"
+                      placeholder="1000"
+                      value={field.value?.amount || ""}
+                      onChange={(e) =>
+                        field.onChange({
+                          ...field.value,
+                          amount: parseFloat(e.target.value) || 0, // Ensure it's a number
+                        })
+                      }
+                      className="h-[46px]"
+                    />
+                  </FormControl>
+                </div>
                 <FormMessage />
               </FormItem>
             )}
@@ -253,7 +289,7 @@ const QouteForm = () => {
 
           <Button
             type="submit"
-            className="w-full h-[52px] text-[16px] bg-[#2B2F84]"
+            className="w-full h-[52px] text-[16px] bg-[#2B2F84] hover:bg-[#282b69dc]"
           >
             REQUEST A QUOTE
           </Button>

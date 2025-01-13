@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { InputFile } from "@/components/custom/fileinput";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea"
+import CustomPhonenumberInput from "@/components/custom/Inputs/CustomPhonenumberInput";
 
 
 const ContactForm = () => {
@@ -69,13 +70,11 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-[16px]">Phone number</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="+234 123 456 7890"
-                    {...field}
-                    className="h-[46px]"
-                  />
-                </FormControl>
+                <CustomPhonenumberInput
+                  value={field.value}
+                  onChange={field.onChange}
+                  className=""
+                 />
                 <FormMessage />
               </FormItem>
             )}
@@ -159,7 +158,7 @@ const ContactForm = () => {
 
           <Button
             type="submit"
-            className="w-full h-[52px] text-[16px] bg-[#2B2F84]"
+            className="w-full h-[52px] text-[16px] bg-[#2B2F84] hover:bg-[#282b69dc]"
           >
             SUBMIT
           </Button>

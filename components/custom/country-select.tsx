@@ -1,9 +1,20 @@
 "use client";
 
 import React from "react";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChevronsUpDown, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -14,7 +25,11 @@ interface CountrySelectProps {
   countries: string[];
 }
 
-const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange, countries }) => {
+const CountrySelect: React.FC<CountrySelectProps> = ({
+  value,
+  onChange,
+  countries,
+}) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -33,29 +48,27 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange, countrie
       <PopoverContent className="p-0 w-[400px]" align="start">
         <Command>
           <CommandInput placeholder="Search Country..." className="h-9" />
-          <ScrollArea className="h-[200px] w-full px-2">
-            <CommandList>
-              <CommandEmpty>No Country found.</CommandEmpty>
-              <CommandGroup>
-                {countries.map((country, index) => (
-                  <CommandItem
-                    key={country}
-                    value={country}
-                    onSelect={() => onChange(country)}
-                    className="cursor-pointer"
-                  >
-                    {country}
-                    <Check
-                      className={cn(
-                        "ml-auto",
-                        country === value ? "opacity-100" : "opacity-0"
-                      )}
-                    />
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            </CommandList>
-          </ScrollArea>
+          <CommandList>
+            <CommandEmpty>No Country found.</CommandEmpty>
+            <CommandGroup>
+              {countries.map((country, index) => (
+                <CommandItem
+                  key={country}
+                  value={country}
+                  onSelect={() => onChange(country)}
+                  className="cursor-pointer"
+                >
+                  {country}
+                  <Check
+                    className={cn(
+                      "ml-auto",
+                      country === value ? "opacity-100" : "opacity-0"
+                    )}
+                  />
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
         </Command>
       </PopoverContent>
     </Popover>

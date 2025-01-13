@@ -1,27 +1,52 @@
 import { z } from "zod";
+import { E164Number, parsePhoneNumberWithError } from "libphonenumber-js";
+import { parsePhoneNumberFromString, isValidNumber } from "libphonenumber-js";
 
 export const qouteFormSchema = z.object({
   name: z.string().min(2, {
-    message: "name must be at least 2 characters.",
+    message: "Name must be at least 2 characters.",
   }),
   email: z.string().email({
     message: "Invalid email address.",
   }),
-  phone: z.string().min(10, {
-    message: "Invalid phone number.",
-  }),
+  phone: z
+    .string()
+    .refine(
+      (value) => {
+        // Parse the phone number
+        const phoneNumber = parsePhoneNumberFromString(value || "", "US"); // Replace "US" with your preferred default region
+        // Ensure the phone number is valid and matches the region
+        return phoneNumber?.isValid() || false;
+      },
+      { message: "Invalid phone number. Please enter a valid E.164 number." }
+    )
+    .transform((value) => {
+      const phoneNumber = parsePhoneNumberFromString(value || "", "US");
+      return phoneNumber?.number as E164Number; // Transform to E164Number
+    }),
   country: z.string().min(2, {
     message: "Invalid country.",
   }),
   project_type: z.string().min(2, {
     message: "Invalid project type.",
   }),
-  estimated_budget: z
-    .number({
-      invalid_type_error: "Estimated budget must be a number.",
-    })
-    .positive("Estimated budget must be a positive number.")
-    .min(0.01, "Estimated budget must be greater than 0."),
+  estimated_budget: z.object({
+    amount: z
+      .number({
+        invalid_type_error: "Estimated budget must be a number.",
+      })
+      .positive("Estimated budget must be a positive number.")
+      .min(0.01, "Estimated budget must be greater than 0."),
+    currency: z
+      .string()
+      .min(3, {
+        message: "Currency code must be at least 3 characters (e.g., USD).",
+      })
+      .refine(
+        (value) => ["USD", "EUR", "GBP", "JPY"].includes(value),
+        "Invalid currency. Please select a valid option."
+      ),
+  }),
   desired_start_date: z.date({
     message: "Invalid date.",
   }),
@@ -36,9 +61,23 @@ export const contactFormSchema = z.object({
   name: z.string().min(2, {
     message: "name must be at least 2 characters.",
   }),
-  phone: z.string().min(10, {
-    message: "Invalid phone number.",
-  }),
+
+  phone: z
+    .string()
+    .refine(
+      (value) => {
+        // Parse the phone number
+        const phoneNumber = parsePhoneNumberFromString(value || "", "US"); // Replace "US" with your preferred default region
+        // Ensure the phone number is valid and matches the region
+        return phoneNumber?.isValid() || false;
+      },
+      { message: "Invalid phone number. Please enter a valid E.164 number." }
+    )
+    .transform((value) => {
+      const phoneNumber = parsePhoneNumberFromString(value || "", "US");
+      return phoneNumber?.number as E164Number; // Transform to E164Number
+    }),
+
   email: z.string().email({
     message: "Invalid email address.",
   }),
@@ -54,7 +93,6 @@ export const contactFormSchema = z.object({
     message: "Please agree to the terms and conditions.",
   }),
 });
-
 
 export const testimonialSchema = z.object({
   clientName: z.string().min(2, {
