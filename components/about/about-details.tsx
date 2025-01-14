@@ -85,7 +85,7 @@ export default function AboutDetails() {
               </p>
               <p>
                 Furthermore, we can provide an end-to-end service to our
-                customers. At the client's request, we facilitate and coordinate
+                customers. At the client&apos;s request, we facilitate and coordinate
                 the design process and deliver the project as a turnkey
                 development. Our project managers work closely with the client
                 throughout a project, starting with the initial consultation
@@ -95,11 +95,11 @@ export default function AboutDetails() {
                 We aim to deliver value for money and are immensely proud of our
                 heritage of exceptional craftsmanship and impeccable project
                 insight provided by our team of professionals. We believe in the
-                mantra, 'putting the customer first', and practice this in our
+                mantra, &apos;putting the customer first&apos;, and practice this in our
                 client engagements. We insist that all our developments and
                 projects are handled with the same level of care and importance
                 that a client will ascribe to the project, prompting our
-                client's desire to feel the Pearl Projects' touch.
+                client&apos;s desire to feel the Pearl Projects&apos; touch.
               </p>
               <p>
                 Pearl Projects & Developments is active on project sites across
