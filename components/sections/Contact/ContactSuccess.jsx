@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-export const ContactSuccessMessage = () => {
+const ContactSuccessMessage = () => {
   return (
     <motion.section
       initial={{ opacity: 0, scale: 0.95 }}
@@ -30,3 +30,4 @@ export const ContactSuccessMessage = () => {
     </motion.section>
   );
 };
+export default ContactSuccessMessage;

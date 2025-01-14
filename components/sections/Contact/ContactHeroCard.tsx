@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ContactFormComponent } from "@/components/forms/contactForm";
-import { ContactSuccessMessage } from "@/components/sections/Contact/ContactSuccess";
 import { GeneralSectionCard } from "@/components/forms/cards/QuestionCard";
 import { containerVariants, fadeIn } from "@/lib/helpers/helperFuncs";
 import { socialIcons } from "@/lib/helpers/mockData";
@@ -44,13 +43,11 @@ export const ContactHeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
-            Have something to say or a suggestion?{" "}
-            <br className="xl:hidden" /> Send us a message
+            Have something to say or a suggestion? <br className="xl:hidden" />{" "}
+            Send us a message
           </motion.p>
           <div className="space-y-3 mt-4 hidden xl:block">
-            <p className="text-sm font-medium">
-              Follow us on Social Media
-            </p>
+            <p className="text-sm font-medium">Follow us on Social Media</p>
             <motion.div
               className="flex space-x-3 pb-12 xl:pb-0"
               variants={containerVariants}
@@ -104,5 +101,38 @@ export const ContactHeroSection = () => {
         </div>
       </div>
     </GeneralSectionCard>
+  );
+};
+
+
+
+
+const ContactSuccessMessage = () => {
+  return (
+    <motion.section
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="xl:bg-[#F4F7F8]  xl:p-12 rounded-lg space-y-4 py-16"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        className="text-3xl font-semibold xl:text-[36px]"
+      >
+        Thank You for Reaching Out!
+      </motion.div>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+        className="text-[#222D41]"
+      >
+        We&apos;ve received your message and will get back to you shortly. In
+        the meantime, feel free to explore more of what TECH DIVE has to offer.
+        We&apos;re excited to connect with you!
+      </motion.p>
+    </motion.section>
   );
 };
