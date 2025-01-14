@@ -36,7 +36,7 @@ export default function AboutDetails() {
 
   return (
     <div className="flex min-h-screen bg-white auto-container w-full lg:space-x-40 space-x-0 mt-40 mb-10 relative">
-      {/* Sidebar */}
+      {/* this is Sidebar */}
       <nav className="w-64  p-6 lg:space-y-20 space-y-0 lg:flex lg:flex-col hidden text-xl">
         <ul className="space-y-2">
           {menuItems.map((item) => (
