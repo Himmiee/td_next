@@ -3,6 +3,8 @@
 "use client";
 import { useFetchServices } from "@/data/services.hooks";
 import Image from "next/image";
+import { Skeleton } from "@/components/ui/skeleton";
+
 // import { useState } from "react";
 
 // const services = [
@@ -39,9 +41,26 @@ const Services = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-[300px]">
-        {/* <LiaSpinnerSolid className="animate-spin text-[#2B2F84] text-5xl" /> */}
-        loading...
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-14">
+        {/* Render skeleton loaders */}
+        {[...Array(4)].map((_, index) => (
+          <div
+            key={index}
+            className="relative h-96 overflow-hidden shadow-lg bg-gray-200/50 rounded-md"
+          >
+            {/* Skeleton for Image */}
+            <Skeleton className="absolute inset-0 w-full h-full" />
+
+            {/* Skeleton for Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-10"></div>
+
+            {/* Skeleton for Text */}
+            <div className="absolute bottom-5 left-6 right-6">
+              <Skeleton className="w-3/4 h-6 mb-2" /> {/* Title Skeleton */}
+              <Skeleton className="w-1/2 h-4" /> {/* Description Skeleton */}
+            </div>
+          </div>
+        ))}
       </div>
     );
   }
@@ -71,9 +90,9 @@ const Services = () => {
 
       {/* Service Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {services.map(({ service, index }: any) => (
+        {services.map((service: any) => (
           <div
-            key={index}
+            key={service.id}
             className="relative h-96  overflow-hidden shadow-lg group"
           >
             {/* Background Image */}

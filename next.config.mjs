@@ -5,7 +5,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "res.cloudinary.com",
-        pathname: "/**", // Match all paths under res.cloudinary.com
+        pathname: "/**",
       },
     ],
   },
