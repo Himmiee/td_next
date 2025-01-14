@@ -1,35 +1,52 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // pages/services.tsx
-
+"use client";
+import { useFetchServices } from "@/data/services.hooks";
 import Image from "next/image";
+// import { useState } from "react";
 
-const services = [
-  {
-    title: "Building Extension",
-    description:
-      "On every extension project, our team of professionals and craftsmen work tirelessly and mindfully to achieve our client’s vision outlined in their brief and then bring it to life with its related aesthetics.",
-    image: "/images/homepage/services-1.jpg", // Replace with your image path
-  },
-  {
-    title: "Building Refurbishment",
-    description:
-      "On all of our refurbishment projects, we ensure our craftsmen deliver high-quality workmanship to the client’s satisfaction. Some refurbishment projects include remodelling a kitchen, rejuvenating internal spaces, and updating wooden doors and related joinery.",
-    image: "/images/homepage/services-2.jpg", // Replace with your image path
-  },
-  {
-    title: "Building Conversion",
-    description:
-      "Our specialist teams responsible for conversion projects have a wealth of experience working through and resolving challenges typically faced when converting the use and layout of a given space.",
-    image: "/images/homepage/services-3.jpg", // Replace with your image path
-  },
-  {
-    title: "New Development",
-    description:
-      "Our offer and delivery of building management services for owners and operators of private and commercial properties guarantee that our client’s mind can remain at ease whilst our team of professionals and craftsmen address the day-to-day property needs.",
-    image: "/images/homepage/services-4.jpg", // Replace with your image path
-  },
-];
+// const services = [
+//   {
+//     title: "Building Extension",
+//     description:
+//       "On every extension project, our team of professionals and craftsmen work tirelessly and mindfully to achieve our client’s vision outlined in their brief and then bring it to life with its related aesthetics.",
+//     image: "/images/homepage/services-1.jpg", // Replace with your image path
+//   },
+//   {
+//     title: "Building Refurbishment",
+//     description:
+//       "On all of our refurbishment projects, we ensure our craftsmen deliver high-quality workmanship to the client’s satisfaction. Some refurbishment projects include remodelling a kitchen, rejuvenating internal spaces, and updating wooden doors and related joinery.",
+//     image: "/images/homepage/services-2.jpg", // Replace with your image path
+//   },
+//   {
+//     title: "Building Conversion",
+//     description:
+//       "Our specialist teams responsible for conversion projects have a wealth of experience working through and resolving challenges typically faced when converting the use and layout of a given space.",
+//     image: "/images/homepage/services-3.jpg", // Replace with your image path
+//   },
+//   {
+//     title: "New Development",
+//     description:
+//       "Our offer and delivery of building management services for owners and operators of private and commercial properties guarantee that our client’s mind can remain at ease whilst our team of professionals and craftsmen address the day-to-day property needs.",
+//     image: "/images/homepage/services-4.jpg", // Replace with your image path
+//   },
+// ];
 
 const Services = () => {
+  // const [currentItem, setCurrentItem] = useState<string | undefined>("item-0");
+  const { data, isLoading } = useFetchServices();
+  const services = data?.data;
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-[300px]">
+        {/* <LiaSpinnerSolid className="animate-spin text-[#2B2F84] text-5xl" /> */}
+        loading...
+      </div>
+    );
+  }
+  console.log(services);
+
   return (
     <section className=" my-14 ">
       {/* Header Section */}
@@ -54,14 +71,14 @@ const Services = () => {
 
       {/* Service Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {services.map((service, index) => (
+        {services.map(({ service, index }: any) => (
           <div
             key={index}
             className="relative h-96  overflow-hidden shadow-lg group"
           >
             {/* Background Image */}
             <Image
-              src={service.image}
+              src={service.cover_image}
               alt={service.title}
               fill
               className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
