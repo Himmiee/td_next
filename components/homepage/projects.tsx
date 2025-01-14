@@ -86,7 +86,7 @@ const Projects = () => {
               </div>
 
               {/* Right: Description */}
-              <div className="text-white lg:text-xl text-lg flex justify-between lg:px-20 lg:w-[50%] w-full">
+              <div className="text-white lg:text-xl text-lg flex  lg:pl-20 space-x-10 lg:w-[50%] w-full">
                 <p className="font-bold">{project.service_tag}</p>
                 <p className="font-bold">{project.tag2}</p>
               </div>
