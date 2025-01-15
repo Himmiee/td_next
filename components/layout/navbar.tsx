@@ -94,7 +94,7 @@ const Navbar = () => {
       //   scrolled ? "fixed transition ease-in" : ""
       // } left-0 right-0 z-30 w-full`}
       className={`${
-        scrolled ? "fixed transition ease-in" : ""
+        scrolled ? "fixed transition ease-in bg-white shadow-md" : ""
       } left-0 right-0 z-[3000] w-full`}
     >
       <main className="w-full relative h-full">
