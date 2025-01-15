@@ -80,16 +80,58 @@ body {
   }
 }
 
-.PhoneInput{
-  @apply rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors  placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm h-[46px];
+/* Style the overall PhoneInput container */
+.PhoneInput {
+  @apply flex items-center gap-2 w-full;
 }
 
+/* Style the PhoneInputCountry container */
+.PhoneInputCountry {
+  @apply flex items-center relative shrink-0 shadow-sm border border-input rounded-md px-2 py-1 h-[43px] w-[54.83px];
 
-.PhoneInputInput {
-  @apply border-0 focus-within:border-0 focus-visible:border-0 outline-none;
 }
 
+/* Style the PhoneInputCountrySelect */
+.PhoneInputCountrySelect {
+  @apply appearance-none border-0 bg-transparent text-sm cursor-pointer outline-none mr-2;
+}
+
+/* Focus state for PhoneInputCountrySelect */
+.PhoneInputCountrySelect:focus {
+  @apply outline-none;
+}
+
+/* Style for the flag icon container */
+.PhoneInputCountryIcon {
+  @apply flex items-center justify-center w-6 h-6 rounded overflow-hidden;
+}
+
+/* Borderless style for the flag icon (with !important emphasis) */
 .PhoneInputCountryIcon--border {
-  @apply border-0 bg-transparent shadow-none focus-within:border-0 focus-visible:border-0 outline-none;
+  @apply !border-0 !bg-transparent !shadow-none focus-within:!border-0 focus-visible:!border-0 outline-none;
 }
+
+/* Style for the flag icon image */
+.PhoneInputCountryIconImg {
+  @apply w-full h-full object-cover;
+}
+
+/* Style for the dropdown arrow */
+.PhoneInputCountrySelectArrow {
+  @apply absolute right-1.5 top-[40%] transform -translate-y-1/2 pointer-events-none;
+  border: solid #000;
+  border-width: 0 1.5px 1.5px 0;
+  @apply rotate-45 inline-block w-[6px] h-[6px];
+}
+
+/* Style for the input field */
+.PhoneInputInput {
+  @apply flex-grow shadow-sm border border-input bg-transparent rounded-md px-2 py-1 text-sm outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring h-[43px];
+}
+
+/* Focus state for the input field */
+.PhoneInputInput:focus {
+  @apply ring-1 ring-ring;
+}
+
 

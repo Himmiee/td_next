@@ -30,23 +30,28 @@ export const qouteFormSchema = z.object({
   project_type: z.string().min(2, {
     message: "Invalid project type.",
   }),
-  estimated_budget: z.object({
-    amount: z
-      .number({
-        invalid_type_error: "Estimated budget must be a number.",
-      })
-      .positive("Estimated budget must be a positive number.")
-      .min(0.01, "Estimated budget must be greater than 0."),
-    currency: z
-      .string()
-      .min(3, {
-        message: "Currency code must be at least 3 characters (e.g., USD).",
-      })
-      .refine(
-        (value) => ["USD", "EUR", "GBP", "JPY"].includes(value),
-        "Invalid currency. Please select a valid option."
-      ),
-  }),
+  estimated_budget: z
+    .string()
+    .refine((val) => !isNaN(parseFloat(val)), {
+      message: "Estimated budget must be a valid number.",
+    })
+    .transform((val) => parseFloat(val)) // Convert string to number
+    .refine((val) => val > 0, {
+      message: "Estimated budget must be a positive number.",
+    })
+    .refine((val) => val >= 0.01, {
+      message: "Estimated budget must be greater than 0.",
+    }),
+
+  currency: z
+    .string()
+    .min(3, {
+      message: "Currency code must be at least 3 characters (e.g., USD).",
+    })
+    .refine(
+      (value) => ["USD", "EUR", "GBP", "JPY"].includes(value),
+      "Invalid currency. Please select a valid option."
+    ),
   desired_start_date: z.date({
     message: "Invalid date.",
   }),
@@ -55,6 +60,7 @@ export const qouteFormSchema = z.object({
       message: "Please upload a valid file.",
     })
     .nullable(),
+  message: z.string().optional(),
 });
 
 export const contactFormSchema = z.object({
@@ -82,14 +88,14 @@ export const contactFormSchema = z.object({
     message: "Invalid email address.",
   }),
   document: z
-    .custom<File>((value) => value instanceof File, {
+    .custom<File | null>((value) => value === null || value instanceof File, {
       message: "Please upload a valid file.",
     })
     .nullable(),
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
   }),
-  agreement: z.boolean({
+  agreement: z.boolean().refine((value) => value, {
     message: "Please agree to the terms and conditions.",
   }),
 });

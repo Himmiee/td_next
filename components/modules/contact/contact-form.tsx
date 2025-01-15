@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -17,11 +17,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { InputFile } from "@/components/custom/fileinput";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Textarea } from "@/components/ui/textarea"
+import { Textarea } from "@/components/ui/textarea";
 import CustomPhonenumberInput from "@/components/custom/Inputs/CustomPhonenumberInput";
-
+import toast from "react-hot-toast";
+import { submitContactFormDetails } from "@/data/formsSubmission";
 
 const ContactForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -34,10 +36,29 @@ const ContactForm = () => {
     },
   });
 
+  const { reset } = form;
+
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof contactFormSchema>) {
-    console.log(values);
-  }
+  const onSubmit = async (data: z.infer<typeof contactFormSchema>) => {
+    setIsSubmitting(true);
+    try {
+      // Submit the form data
+      const res = await submitContactFormDetails(data);
+      toast.success(res.message);
+    } catch (error) {
+      console.error(error);
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+      reset();
+      const fileInput = document.getElementById(
+        "formDocument"
+      ) as HTMLInputElement;
+      fileInput.value = "";
+    }
+  };
+
+  const requiredstar = "after:content-['*'] after:text-red-600 after:ml-1 after:mt-[2px]";
 
   return (
     <div className="max-w-[604px] mx-auto">
@@ -50,7 +71,7 @@ const ContactForm = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[16px]">Name</FormLabel>
+                <FormLabel className={`text-[16px] ${requiredstar}`}>Name</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="John Doe"
@@ -69,12 +90,12 @@ const ContactForm = () => {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[16px]">Phone number</FormLabel>
+                <FormLabel className={`text-[16px] ${requiredstar}`}>Phone number</FormLabel>
                 <CustomPhonenumberInput
                   value={field.value}
                   onChange={field.onChange}
                   className=""
-                 />
+                />
                 <FormMessage />
               </FormItem>
             )}
@@ -86,7 +107,7 @@ const ContactForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[16px]">Email</FormLabel>
+                <FormLabel className={`text-[16px] ${requiredstar}`}>Email</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="infojohndoe@gmail.com"
@@ -106,7 +127,7 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Document</FormLabel>
-                <InputFile onChange={field.onChange} Value={field.value} />
+                <InputFile onChange={field.onChange} />
                 <FormMessage />
               </FormItem>
             )}
@@ -118,14 +139,13 @@ const ContactForm = () => {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[16px]">Message</FormLabel>
+                <FormLabel className={`text-[16px] ${requiredstar}`}>Message</FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Type your message here..."
                     {...field}
                     className="h-[100px]"
                   />
-                  
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -146,9 +166,10 @@ const ContactForm = () => {
                   />
                   <label
                     htmlFor="terms2"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    className="text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 leading-[1.4rem]"
                   >
-                    By continuing you agree to our <strong>Terms of Service and Privacy Policy.</strong>
+                    By continuing you agree to our{" "}
+                    <strong>Terms of Service and Privacy Policy.</strong>
                   </label>
                 </div>
                 <FormMessage />
@@ -158,9 +179,10 @@ const ContactForm = () => {
 
           <Button
             type="submit"
-            className="w-full h-[52px] text-[16px] bg-[#2B2F84] hover:bg-[#282b69dc]"
+            className="w-full h-[52px] text-[16px] bg-[#2B2F84] hover:bg-[#282b69dc] disabled:bg-[#282b69dc]"
+            disabled={isSubmitting}
           >
-            SUBMIT
+            {isSubmitting ? "Submitting..." : " SUBMIT"}
           </Button>
         </form>
       </Form>

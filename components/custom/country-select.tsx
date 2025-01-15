@@ -16,7 +16,7 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { ChevronsUpDown, Check } from "lucide-react";
+import { ChevronsUpDown, Check, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface CountrySelectProps {
@@ -42,7 +42,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
           )}
         >
           {value ? value : "Select Country"}
-          <ChevronsUpDown className="opacity-50" />
+          <ChevronDown className="h-4 w-4 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="p-0 w-[400px]" align="start">

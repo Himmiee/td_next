@@ -36,8 +36,12 @@ import { cn } from "@/lib/utils";
 import { InputFile } from "@/components/custom/fileinput";
 import CountrySelect from "@/components/custom/country-select";
 import CustomPhonenumberInput from "@/components/custom/Inputs/CustomPhonenumberInput";
+import { submitQuoteFormDetails } from "@/data/formsSubmission";
+import toast from "react-hot-toast";
+import { Textarea } from "@/components/ui/textarea";
 
 const QouteForm = () => {
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -45,20 +49,39 @@ const QouteForm = () => {
       email: "",
       phone: "",
       country: "",
-      project_type: "",
-      estimated_budget: {
-        amount: 0,
-        currency: "USD",
-      },
+      project_type: "Construction",
+      estimated_budget: 0.0,
+      currency: "GBP",
       desired_start_date: new Date(),
       attachment: null,
+      message: "",
     },
   });
 
+  const { reset } = form;
+
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-  }
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    try {
+      // Submit the form data
+      // console.log(data);
+      setIsSubmitting(true);
+      const res = await submitQuoteFormDetails(data);
+      toast.success(res.message);
+    } catch (error) {
+      console.error(error);
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+      reset();
+      const fileInput = document.getElementById(
+        "formDocument"
+      ) as HTMLInputElement;
+      fileInput.value = "";
+    }
+  };
+
+  const requiredstar = "after:content-['*'] after:text-red-600 after:ml-1 after:mt-[2px]";
 
   return (
     <div className="max-w-[604px] mx-auto">
@@ -73,7 +96,7 @@ const QouteForm = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[16px]">Your name</FormLabel>
+                <FormLabel className={`text-[16px] ${requiredstar}`}>Your name</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="John Doe"
@@ -92,7 +115,7 @@ const QouteForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[16px]">Email</FormLabel>
+                <FormLabel className={`text-[16px] ${requiredstar}`}>Email</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="infojohndoe@gmail.com"
@@ -111,7 +134,7 @@ const QouteForm = () => {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[16px]">Phone number</FormLabel>
+                <FormLabel className={`text-[16px] ${requiredstar}`}>Phone number</FormLabel>
                 <CustomPhonenumberInput
                   value={field.value}
                   onChange={field.onChange}
@@ -127,7 +150,7 @@ const QouteForm = () => {
             name="country"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Country</FormLabel>
+                <FormLabel className={`text-[16px] ${requiredstar}`}>Country</FormLabel>
                 <CountrySelect
                   value={field.value}
                   onChange={(value) => field.onChange(value)}
@@ -138,95 +161,99 @@ const QouteForm = () => {
             )}
           />
 
-          {/* project type */}
-          <FormField
-            control={form.control}
-            name="project_type"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Project type</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
-                  <FormControl>
-                    <SelectTrigger className="h-[46px]">
-                      <SelectValue placeholder="Construction" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {ProjectType.map((project, index) => (
-                      <SelectItem
-                        className="cursor-pointer"
-                        key={index}
-                        value={project}
-                      >
-                        {project}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="flex flex-wrap gap-4">
+            {/* Project Type */}
+            <div className="flex-1 min-w-[200px]">
+              <FormField
+                control={form.control}
+                name="project_type"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={`text-[16px] ${requiredstar}`}>Project Type</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger className="h-[46px]">
+                          <SelectValue placeholder="Construction" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {ProjectType.map((project, index) => (
+                          <SelectItem
+                            className="cursor-pointer"
+                            key={index}
+                            value={project}
+                          >
+                            {project}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
 
-          <FormField
-            control={form.control}
-            name="estimated_budget"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Estimated Budget</FormLabel>
-                <div className="flex items-center">
-                  {/* Currency Selector */}
-                  <Select
-                    onValueChange={(value) =>
-                      field.onChange({
-                        ...field.value,
-                        currency: value,
-                      })
-                    }
-                    value={field.value?.currency || ""}
-                  >
+            {/* Currency */}
+            <div className="flex-1 min-w-[150px]">
+              <FormField
+                control={form.control}
+                name="currency"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={`text-[16px] ${requiredstar}`}>Currency</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger className="h-[46px]">
+                          <SelectValue placeholder="GBP" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {["USD", "EUR", "GBP", "JPY"].map((currency, index) => (
+                          <SelectItem
+                            className="cursor-pointer"
+                            key={index}
+                            value={currency}
+                          >
+                            {currency}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+
+            {/* Estimated Budget */}
+            <div className="flex-1 min-w-[200px]">
+              <FormField
+                control={form.control}
+                name="estimated_budget"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={`text-[16px] ${requiredstar}`}>Estimated Budget</FormLabel>
                     <FormControl>
-                      <SelectTrigger className="h-[46px] w-[100px] mr-3">
-                        <SelectValue placeholder="USD" />
-                      </SelectTrigger>
+                      <Input
+                        type="number"
+                        placeholder="0.00"
+                        {...field}
+                        className="h-[46px]"
+                      />
                     </FormControl>
-                    <SelectContent>
-                      {["USD", "EUR", "GBP", "JPY"].map((currency, index) => (
-                        <SelectItem
-                          className="cursor-pointer"
-                          key={index}
-                          value={currency}
-                        >
-                          {currency}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-
-                  
-                  {/* Amount Input */}
-                  <FormControl>
-                    <Input
-                      type="number"
-                      placeholder="1000"
-                      value={field.value?.amount || ""}
-                      onChange={(e) =>
-                        field.onChange({
-                          ...field.value,
-                          amount: parseFloat(e.target.value) || 0, // Ensure it's a number
-                        })
-                      }
-                      className="h-[46px]"
-                    />
-                  </FormControl>
-                </div>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+          </div>
 
           {/* desired start date */}
           <FormField
@@ -234,7 +261,7 @@ const QouteForm = () => {
             name="desired_start_date"
             render={({ field }) => (
               <FormItem className="flex flex-col">
-                <FormLabel>Desired Start Date</FormLabel>
+                <FormLabel className={`text-[16px] ${requiredstar}`}>Desired Start Date</FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
@@ -266,9 +293,6 @@ const QouteForm = () => {
                     />
                   </PopoverContent>
                 </Popover>
-                <FormDescription>
-                  Select a date when you want to start your project.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -281,7 +305,26 @@ const QouteForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Attachment</FormLabel>
-                <InputFile onChange={field.onChange} Value={field.value} />
+                <InputFile onChange={field.onChange} />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          {/* message */}
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-[16px]">Message</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Type your message here..."
+                    {...field}
+                    className="h-[100px]"
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -289,9 +332,10 @@ const QouteForm = () => {
 
           <Button
             type="submit"
-            className="w-full h-[52px] text-[16px] bg-[#2B2F84] hover:bg-[#282b69dc]"
+            className="w-full h-[52px] text-[16px] bg-[#2B2F84] hover:bg-[#282b69dc] disabled:bg-[#282b69dc]"
+            disabled={isSubmitting}
           >
-            REQUEST A QUOTE
+            {isSubmitting ? "Submitting..." : "REQUEST A QUOTE"}
           </Button>
         </form>
       </Form>
