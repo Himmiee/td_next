@@ -1,3 +1,4 @@
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // pages/projects.tsx
 
@@ -33,9 +34,11 @@ const Projects = () => {
     return <Skeleton className="w-full  h-60 my-10" />;
   }
   console.log(projects);
+
   return (
     <section className=" my-24">
       {/* Header Section */}
+
 
       {pathname !== "/projects" && (
         <div className="flex flex-col lg:flex-row justify-between items-center mb-12">
@@ -66,12 +69,15 @@ const Projects = () => {
         {projects.map((project: any) => (
           <div
             key={project._id}
+
             className="relative h-96  overflow-hidden shadow-lg group"
           >
             {/* Background Image */}
             <Image
+
               src={project.first_image.image}
               alt={project.project_name}
+
               fill
               className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
             />
@@ -82,22 +88,26 @@ const Projects = () => {
             {/* Content */}
             <div className="absolute inset-0 flex lg:flex-row flex-col items-center lg:justify-between justify-center px-6">
               {/* Left: Title */}
+
               <Link
                 href={`/projects/${project._id}`}
                 className=" bg-white/60  flex  lg:w-[50%] w-full mb-5 lg:mb-0  h-16 items-center justify-between px-5 py-3"
               >
                 <div className=" text-xl font-bold">{project.project_name}</div>
 
+
                 <div className="text-xl">
                   <span className="flex items-center justify-center w-10 h-10 ">
                     →
                   </span>
                 </div>
+
               </Link>
 
               {/* Right: Description */}
               <div className="text-white lg:text-xl text-lg flex  lg:pl-20 space-x-10 lg:w-[50%] w-full">
                 <p className="font-bold">{project.service_tag}</p>
+
                 <p className="font-bold">{project.tag2}</p>
               </div>
             </div>

@@ -11,8 +11,8 @@ export default function Footer() {
   return (
     <div className="w-full">
       <Newsletter />
-      <footer className="bg-primary-60 w-full">
-        <div className="xl:px-24 lg:px-10 px-4 py-12 mx-auto w-full">
+      <footer className="bg-primary-60 w-full mt-20">
+        <div className="lg:px-32 px-1 w-full py-20">
           {/* Main Footer Content */}
           <div className="flex flex-wrap lg:flex-nowrap w-full gap-y-8">
             {/* Trusted By Section */}
@@ -27,7 +27,7 @@ export default function Footer() {
               <div className="space-y-4 flex flex-col justify-center lg:items-start items-center  ">
                 <Link
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="flex items-center gap-3 text-sm hover:text-primary-100 transition-colors"
+                  className="flex lg:items-start items-center  gap-4 text-sm hover:text-primary-100 transition-colors"
                 >
                   {/* <Mail className="h-4 w-4 text-primary-100" /> */}
                   <Image
@@ -43,7 +43,7 @@ export default function Footer() {
                   <Link
                     key={phone}
                     href={`tel:${phone.replace(/\s+/g, "")}`}
-                    className="flex items-center gap-3 text-sm hover:text-primary-100 transition-colors"
+                    className="flex lg:items-start items-center gap-4 text-sm hover:text-primary-100 transition-colors"
                   >
                     {/* <Phone className="h-4 w-4 text-primary-100" /> */}
                     <Image
