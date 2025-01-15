@@ -7,7 +7,7 @@ export default function Project() {
   return (
     <main>
       <HeroSection />
-      <div className="auto-container">
+      <div className="auto-container mb-20">
         <Projects />
       </div>
       <ContactFormLayout />

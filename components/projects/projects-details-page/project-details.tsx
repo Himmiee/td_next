@@ -1,16 +1,38 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const services = [
-  { id: "refurbishment", label: "Refurbishment" },
-  { id: "conversion", label: "Conversion" },
-  { id: "extension", label: "Extension" },
-  { id: "design", label: "Design" },
-];
+interface ProjectDetailsProps {
+  projects_details: {
+    service_tag: string;
+    project_name: string;
+    location: string;
+    project_brief: string;
+    project_delivery: string;
+  };
+}
+export default function ProjectDetails({
+  projects_details,
+}: ProjectDetailsProps) {
+  const services = [
+    { id: "refurbishment", label: "Refurbishment" },
+    { id: "conversion", label: "Conversion" },
+    { id: "extension", label: "Extension" },
+    { id: "design", label: "Design" },
+  ];
+  // Ensure the initial active service matches an available service
+  const [activeService, setActiveService] = useState<string | null>(null);
 
-export default function ProjectDetails() {
-  const [activeService, setActiveService] = useState("refurbishment");
+  // Set the active service based on the service_tag if it matches
+  useEffect(() => {
+    if (
+      services.some((service) => service.id === projects_details.service_tag)
+    ) {
+      setActiveService(projects_details.service_tag);
+    } else {
+      setActiveService(services[0].id); // Default to the first service if no match
+    }
+  }, [projects_details.service_tag]);
 
   return (
     <div className="flex min-h-screen bg-white auto-container lg:space-x-40 space-x-0">
@@ -32,7 +54,7 @@ export default function ProjectDetails() {
             </li>
           ))}
         </ul>
-        <ul className="space-y-2">
+        {/* <ul className="space-y-2">
           {services.map((service) => (
             <li key={service.id}>
               <button
@@ -63,7 +85,7 @@ export default function ProjectDetails() {
               </button>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </nav>
 
       {/* Main Content */}
@@ -73,20 +95,15 @@ export default function ProjectDetails() {
             <h1 className="text-4xl font-bold text-primary-80 mb-2">
               CLIENT NAME
             </h1>
-            <p className="text-gray-600">Faringdon: Complete Refurbishment</p>
+            <p className="text-gray-600">{projects_details.project_name}</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold text-primary-80 mb-4">
               LOCATION
             </h2>
-            <p className="text-gray-600 leading-relaxed">
-              Delivering within budget and time, at a high level of quality and
-              offering services at a fair and competitive price to our clients,
-              ensures we remain competitive. We maintain a high level of
-              professionalism, ensuring at all times integrity, honesty and
-              fairness in our relationship with our suppliers, subcontractors,
-              professional associates and clients, remains our first priority.
+            <p className="text-gray-600 leading-relaxed capitalize">
+              {projects_details.location}
             </p>
           </section>
 
@@ -95,15 +112,7 @@ export default function ProjectDetails() {
               PROJECT BRIEF
             </h2>
             <p className="text-gray-600 leading-relaxed">
-              We will consistently place a premium on established relationships
-              and commit ourselves daily to our offered promise of integrity and
-              professionalism in all we do. In addition, our commitment to every
-              client includes providing a continued guarantee as well as
-              effectively applying time management, quality management and cost
-              management principles and strategies on all engagements. Most
-              important, we take pride in our efforts to offer and provide equal
-              opportunities across our organisation, as this forms an integral
-              part of our value system.
+              {projects_details.project_brief}
             </p>
           </section>
 
@@ -113,11 +122,13 @@ export default function ProjectDetails() {
             </h2>
             <div className="space-y-6">
               <p className="text-gray-600 leading-relaxed">
-                We are accredited members of the following bodies. Consequently,
+                {projects_details.project_delivery}
+
+                {/* We are accredited members of the following bodies. Consequently,
                 our work is continually vetted and regularly checked to be of a
-                high standard.
+                high standard. */}
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              {/* <p className="text-gray-600 leading-relaxed">
                 With 20 years experience across our management team, Pearl
                 Projects and Development offers and provides exceptional,
                 personalised and professional services to its client. We place a
@@ -134,7 +145,7 @@ export default function ProjectDetails() {
                 this, we have directed our energies towards delivering
                 residential and commercial developments and works, providing
                 outstanding quality and standards.
-              </p>
+              </p> */}
             </div>
           </section>
         </div>
