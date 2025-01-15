@@ -12,22 +12,22 @@ export default function Footer() {
     <div className="w-full">
       <Newsletter />
       <footer className="bg-primary-60 w-full">
-        <div className="auto-container w-full py-20">
+        <div className="xl:px-24 lg:px-10 px-4 py-12 mx-auto w-full">
           {/* Main Footer Content */}
           <div className="flex flex-wrap lg:flex-nowrap w-full gap-y-8">
             {/* Trusted By Section */}
-            <section className="lg:w-[35%] w-full">
-              <h4 className="mb-6 text-xl font-semibold">Trusted By</h4>
+            <section className="lg:w-[35%] w-full px-4 lg:px-0">
+              <h4 className="mb-6 text-xl  font-semibold px-4 ">Trusted By</h4>
               <TrustedLogos />
             </section>
 
             {/* Contact Section */}
-            <section className="lg:w-[30%] w-full">
+            <section className="lg:w-[30%] w-full text-center lg:text-left">
               <h4 className="mb-6 text-xl font-semibold">Contact</h4>
-              <div className="space-y-4">
+              <div className="space-y-4 flex flex-col justify-center lg:items-start items-center  ">
                 <Link
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="flex items-center gap-4 text-sm hover:text-primary-100 transition-colors"
+                  className="flex items-center gap-3 text-sm hover:text-primary-100 transition-colors"
                 >
                   {/* <Mail className="h-4 w-4 text-primary-100" /> */}
                   <Image
@@ -43,7 +43,7 @@ export default function Footer() {
                   <Link
                     key={phone}
                     href={`tel:${phone.replace(/\s+/g, "")}`}
-                    className="flex items-center gap-4 text-sm hover:text-primary-100 transition-colors"
+                    className="flex items-center gap-3 text-sm hover:text-primary-100 transition-colors"
                   >
                     {/* <Phone className="h-4 w-4 text-primary-100" /> */}
                     <Image
@@ -60,15 +60,15 @@ export default function Footer() {
             </section>
 
             {/* Services Columns */}
-            <div className="lg:flex lg:justify-between lg:w-[35%] w-full gap-8">
-              <section className="w-full lg:w-auto">
+            <div className="flex  lg:justify-between justify-center  mx-auto lg:w-[35%] w-full gap-8 px-5">
+              <section className="w-full lg:w-auto lg:mb-0 mb-3  ">
                 <h4 className="mb-6 text-xl font-semibold">Services</h4>
                 <ServicesList services={SERVICES_LEFT} />
               </section>
               <section className="w-full lg:w-auto">
                 <ServicesList
                   services={SERVICES_RIGHT}
-                  className="lg:pt-8 pt-0"
+                  className="lg:pt-8 pt-14 "
                 />
               </section>
             </div>

@@ -4,11 +4,11 @@ import { ConstructionHeroSection } from "@/components/sections/Construction/Hero
 
 const ConstructionPage: React.FC = () => {
   return (
-    <>
+    <section>
       <ConstructionHeroSection />
       <ConstructionDetailsComponent />
       <ContactSection />
-    </>
+    </section>
   );
 };
 

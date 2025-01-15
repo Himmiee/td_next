@@ -1,4 +1,5 @@
-import AboutOurServices from "@/components/about/about-our-services";
+import AboutDetails from "@/components/about/about-details";
+// import AboutOurServices from "@/components/about/about-our-services";
 import FeaturesSection from "@/components/about/features-section";
 import GallerySection from "@/components/about/gallery-section";
 import { HeroSection } from "@/components/about/hero-section";
@@ -9,7 +10,9 @@ export default function Home() {
     <main>
       <HeroSection />
       <div className="auto-container">
-        <AboutOurServices />
+        <AboutDetails />
+
+        {/* <AboutOurServices /> */}
         <FeaturesSection />
       </div>
       <TrustedSuppliers />
