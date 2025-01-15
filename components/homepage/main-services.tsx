@@ -1,4 +1,6 @@
 
+
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // pages/services.tsx
 "use client";
@@ -68,6 +70,8 @@ const Services = () => {
   console.log(services);
 
 
+
+
   return (
     <section className=" my-14 ">
       {/* Header Section */}
@@ -93,16 +97,20 @@ const Services = () => {
       {/* Service Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
+
         {services.map((service: any) => (
           <div
             key={service.id}
+
 
             className="relative h-96  overflow-hidden shadow-lg group"
           >
             {/* Background Image */}
             <Image
 
+
               src={service.cover_image}
+
 
               alt={service.title}
               fill

@@ -4,6 +4,7 @@
 
 "use client";
 
+
 import Image from "next/image";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useFetchProjects } from "@/data/projects.hooks";
@@ -14,6 +15,8 @@ import { usePathname } from "next/navigation";
 //     title: "Farringdon",
 //     tag1: "Complete Refurbishment ",
 //     tag2: "Interior Design",
+
+
 
 //     image: "/images/homepage/project-1.jpg", // Replace with your image path
 //   },
@@ -28,7 +31,9 @@ import { usePathname } from "next/navigation";
 const Projects = () => {
   const { data, isLoading } = useFetchProjects();
   const projects = data?.data;
+
   const pathname = usePathname();
+
 
   if (isLoading) {
     return <Skeleton className="w-full  h-60 my-10" />;
@@ -75,6 +80,7 @@ const Projects = () => {
             {/* Background Image */}
             <Image
 
+
               src={project.first_image.image}
               alt={project.project_name}
 
@@ -89,11 +95,13 @@ const Projects = () => {
             <div className="absolute inset-0 flex lg:flex-row flex-col items-center lg:justify-between justify-center px-6">
               {/* Left: Title */}
 
+
               <Link
                 href={`/projects/${project._id}`}
                 className=" bg-white/60  flex  lg:w-[50%] w-full mb-5 lg:mb-0  h-16 items-center justify-between px-5 py-3"
               >
                 <div className=" text-xl font-bold">{project.project_name}</div>
+
 
 
                 <div className="text-xl">
