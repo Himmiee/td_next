@@ -90,15 +90,18 @@ const Navbar = () => {
 
   return (
     <header
+      // className={`${
+      //   scrolled ? "fixed transition ease-in" : ""
+      // } left-0 right-0 z-30 w-full`}
       className={`${
         scrolled ? "fixed transition ease-in" : ""
       } left-0 right-0 z-[3000] w-full`}
     >
       <main className="w-full relative h-full">
-        <div className="w-full flex flex-row items-center justify-between bg-white xl:px-24 lg:px-10 px-4 h-20">
+        <div className="w-full flex flex-row items-center justify-between bg-white xl:px-32 lg:px-10 px-4  h-20">
           <Link href="/">
             <Image
-              src="/assets/logos/Pearl_logo.png"
+              src="/logos/Pearl_logo.png"
               alt="Pearl logo"
               width={80}
               height={60}
@@ -146,7 +149,7 @@ const Navbar = () => {
                     {link.subLinks && (
                       <span
                         className={`ml-2 transition-transform duration-300 ${
-                          openDropdown === link.slug ? "rotate-180" : ""
+                          openDropdown === link.slug ? "" : "rotate-180"
                         }`}
                       >
                         <ChevronUp className="w-5 h-5" />
@@ -240,7 +243,7 @@ const Navbar = () => {
                         {link.subLinks && (
                           <span
                             className={`ml-2 transition-transform duration-300 ${
-                              openDropdown === link.slug ? "rotate-180" : ""
+                              openDropdown === link.slug ? "" : "rotate-180"
                             }`}
                           >
                             <ChevronUp className="w-5 h-5" />
@@ -265,11 +268,11 @@ const Navbar = () => {
                   ))}
 
                   {/* CONTACT BUTTON */}
-                  <div className="flex justify-center mt-8">
+                  <div className="flex justify-center mt-8 absolute bottom-10">
                     <Link href="/contact">
                       <button
                         type="button"
-                        className="bg-primary-100 hover:opacity-90 transform transition duration-200 hover:shadow-md flex items-center justify-center gap-1.5 font-poppins w-[199px] h-[59px] text-white -tracking-[3%] font-bold"
+                        className="bg-primary-100 hover:opacity-90 transform transition duration-200 hover:shadow-md flex items-center justify-center gap-1.5 font-poppins w-[250px] h-[59px] text-white -tracking-[3%] font-bold"
                       >
                         CONTACT
                       </button>

@@ -1,24 +1,18 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import GridSection from "@/components/homepage/GridSection";
+import { HeroSection } from "@/components/homepage/hero-section";
+import Services from "@/components/homepage/main-services";
+import Projects from "@/components/homepage/projects";
+// import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="flex gap-4  items-center justify-center pt-10">
-      <Button asChild>
-        <Link href="/request-a-quote">
-          Request a Quote
-        </Link>
-      </Button>
-
-      <Button asChild>
-        <Link href="/testimonials">
-          Testimonials
-        </Link>
-      </Button>
-
-      <Button asChild variant={"outline"} >
-        <Link href="/contact" >Contact</Link>
-      </Button>
-    </div>
+    <main>
+      <HeroSection />
+      <div className="auto-container">
+        <Services />
+        <Projects />
+      </div>
+      <GridSection />
+    </main>
   );
 }

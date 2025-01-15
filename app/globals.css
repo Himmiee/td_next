@@ -41,6 +41,7 @@ body {
     --chart-5: 27 87% 67%;
   }
 
+
   .dark {
     --background: 0 0% 19%;
     --foreground: 0 0% 98%;
@@ -75,8 +76,13 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  .auto-container {
+    @apply w-full sm:w-11/12 md:w-10/12 lg:max-w-[1280px] xl:max-w-[1440px] mx-auto;
   }
 }
 
@@ -135,3 +141,7 @@ body {
 }
 
 
+
+.about-details section {
+  scroll-margin-top: 80px;
+}
