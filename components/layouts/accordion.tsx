@@ -6,11 +6,13 @@ import { BiMinus, BiPlus } from "react-icons/bi";
 interface AccordionProps {
   items: AccordionItem[];
   width?: string;
+  isCourses?: boolean;
 }
 
 const Accordion: React.FC<AccordionProps> = ({
   items,
   width = "w-full xl:w-2/3",
+  isCourses = false,
 }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -19,9 +21,7 @@ const Accordion: React.FC<AccordionProps> = ({
   };
 
   return (
-    <div
-      className={`${width} flex justify-center items-center flex-col mx-auto rounded-xl`}
-    >
+    <div className={`${width} mx-auto`}>
       {items.map((item, index) => (
         <div
           key={index}
@@ -31,10 +31,10 @@ const Accordion: React.FC<AccordionProps> = ({
         >
           {/* Title Section */}
           <div
-            className="flex items-center justify-between gap-5 cursor-pointer p-6"
+            className="flex items-center justify-between gap-5 cursor-pointer p-6 "
             onClick={() => toggleAccordion(index)}
           >
-            <h3 className="xl:text-lg font-medium">{item.title}</h3>
+            <h3 className="text-lg font-medium">{item.title}</h3>
             <div
               className={`transform transition-transform duration-300 bg-[#FEF6D6] p-3 rounded-lg ${
                 openIndex === index ? "rotate-180" : ""
@@ -50,11 +50,19 @@ const Accordion: React.FC<AccordionProps> = ({
 
           {/* Content Section */}
           <div
-            className={`overflow-hidden transition-all duration-300 ${
+            className={`transition-all duration-300 ${
               openIndex === index ? "max-h-[1000px] p-6" : "max-h-0 p-0"
-            }`}
+            } overflow-hidden`}
           >
-            <div className="text-gray-600">{item.content}</div>
+            {isCourses ? (
+              <ul className="list-disc pl-6 text-gray-600 space-y-2">
+                {item.content.split("\n").map((bullet, i) => (
+                  <li key={i}>{bullet.trim()}</li>
+                ))}
+              </ul>
+            ) : (
+              <div className="text-gray-600">{item.content}</div>
+            )}
           </div>
         </div>
       ))}

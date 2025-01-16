@@ -298,52 +298,140 @@ Now, I'm passionate about helping other people break into tech, just like I did.
 export const coursesFaqs = [
   {
     title: "SECTION 1: Introduction to Product Management",
-    content:
-      "Synergyy is Africa’s Talent Cloud, connecting startups and businesses with elite African tech talent. We handle everything from talent acquisition and management to payroll, making it seamless for companies to hire top professionals across borders and focus on growth.",
+    content: `What is Product Management?
+      Who is a Product Manager?
+      Understanding "What is a Product?"
+      Identifying Problems as a Product Manager
+      The Role of a Product Manager
+      Defining the Product Vision
+      Differences Between Product Manager, Project Manager, and Program Manager
+      Why Companies Need a Product Manager
+      Collaboration: Who Will You Work With?
+      Hard & Soft Skills of a PM
+      Types of Companies and PM Roles
+      How to Envision Your Role as a PM
+      A Day in the Life of a PM
+      Quiz
+      Task`,
   },
   {
     title: "SECTION 2: Understanding the Product Development Lifecycle",
-    content:
-      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
+    content: `Writing a PRD
+      Steps to Creating a PRD
+      What is a Product Life Cycle
+      Stages of Product Life Cycle
+      Real-World Product Lifecycle Examples
+      Task
+      What is a Product Market Fit
+      Scenario Where a Product Achieves Product-Market Fit (PMF)
+      Strategies to Achieve Product Market Fit
+      Key Criteria of Product-Market Fit
+      How to Identify Lack of Product-Market Fit
+      Product Management Processes:
+        1. Ideation (IDEA, VALIDATE, PLAN)
+        2. Delivery (DESIGN, DEVELOP, TEST)
+        3. Market Adoption (FIND MARKET, SUSTAIN SATURATION, STAY, REWORK, DECLINE)
+      Prioritization Frameworks: 
+        - MoSCoW, Agile, Scrum, and Kanban
+        - Kano Model, RICE (Explained with Real-Life Examples)
+      Quiz
+      Task`,
   },
   {
     title: "SECTION 3: User Research and User Needs",
-    content:
-      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+    content: `Introduction to Users and Needs
+      Generating Ideas as a PM
+      Understanding Customers vs. Users
+      Interviews: Types of Interviews
+      How to Find Interviewers
+      How to Get Them to Respond
+      How to Write the Right Email
+      How to Interpret Feedback
+      Other Ways of Conducting Interviews
+      Good/Bad Questions
+      Using Survey Forms
+      Tools to Create Survey Forms
+      Analyzing Results
+      Market Validation
+      Assumption Mapping
+      Steps to Assumption Mapping
+      Market Validation and Market Research
+      Validating Market Demand
+      Market Research Breakdown
+      Usability Testing and A/B Testing
+      Who is a User?
+      Steps to Conduct Usability Testing
+      A/B Testing
+      Using Data Analytics to Observe and Interpret User Behavior
+      Quiz
+      Task`,
   },
   {
-    title: "SECTION 4: User-Centric Product Development?",
-    content:
-      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
+    title: "SECTION 4: User-Centric Product Development",
+    content: `What is User Segmentation?
+      Types of User Segmentation
+      Identifying Casual, Core, and Power Users
+      User Persona
+      Steps to Creating User Personas
+      Conducting Market Research and Sizing the Market
+      Understanding Competitors and Market Analysis
+      Finding Competitors as a Product Manager
+      Feature Table`,
   },
   {
     title: "SECTION 5: Designing and Running Experiments",
-    content:
-      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
+    content: `MVP (Minimum Viable Product): What is an MVP?
+      Real-Life Example
+      Seven Steps to Building an MVP
+      Identifying and Validating Assumptions
+      Identifying Assumptions for MoniePoint
+      Hypothesis
+      How to Set Up a Hypothesis
+      MVP Techniques: 
+        - Emails, Shadow Buttons, 404 Pages, and "Coming Soon" Pages
+        - More MVP Techniques
+      Evaluating the Results of MVP Experiments`,
   },
   {
     title: "SECTION 6: Design and Wireframing",
-    content:
-      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+    content: `What is Product Design?
+      What Makes a Good Design
+      Sketching and Creating Wireframes
+      Tools for Wireframes and Prototypes
+      Quiz
+      Task`,
   },
   {
     title: "SECTION 7: Metrics for Product Managers",
-    content:
-      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+    content: `Introduction to Metrics for Product Managers
+      Exploring Feedback Loops
+      How to Define and Measure Success
+      Choosing the Right Metrics for Your Product Goals
+      What Makes a Good Metric?
+      Understanding AARRR Metrics (Pirate Metrics)`,
   },
   {
     title: "SECTION 8: Building Products",
-    content:
-      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+    content: `Introduction to Epics, User Stories, and Sprints
+      Writing Acceptance Criteria and Prioritizing Backlogs
+      Creating Product Roadmaps and Using the Right Tools
+      Quiz
+      Task`,
   },
   {
     title: "SECTION 9: Collaboration and Stakeholder Management",
-    content:
-      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+    content: `Communication Skills for PMs
+      Working with Engineers/Developers/Programmers
+      Working Effectively with Executives and Other Stakeholders`,
   },
   {
     title: "SECTION 10: Your Guide to Landing a PM Role",
-    content:
-      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+    content: `How to Look for the Perfect Role
+      Interview Tips and Strategies
+      Resume and Cover Letter Templates
+      LinkedIn Optimization Checklist
+      100+ Interview Power Phrases: Nail Every Interview!
+      Recruiter Outreach Messages: Templates for LinkedIn and Email
+      Job Application Tracker: Stay Organized During Your Search`,
   },
 ];
