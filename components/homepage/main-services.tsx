@@ -90,7 +90,7 @@ const Services = () => {
 
       {/* Service Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {services.map((service: any) => (
+        {services?.map((service: any) => (
           <div
             key={service.id}
             className="relative h-96  overflow-hidden shadow-lg group"

@@ -69,7 +69,7 @@ const Projects = () => {
 
       {/* Projects Cards */}
       <div className="space-y-8">
-        {projects.map((project: any) => (
+        {projects?.map((project: any) => (
           <div
             key={project._id}
             className="relative h-96  overflow-hidden shadow-lg group"
