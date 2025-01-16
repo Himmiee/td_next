@@ -28,7 +28,7 @@ export const TechDiveCard = ({
   color,
   btnText,
   isReversed = false,
-  heightClass = "h-[38vh] xl:h-[550px]",
+  heightClass = "h-[43vh] xl:h-[550px]",
   btnFunc,
 }: TechDiveCardProps) => {
   return (

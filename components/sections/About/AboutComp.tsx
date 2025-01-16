@@ -57,7 +57,7 @@ export const AboutHeroSection = () => {
 
           {/* Grid Content */}
           <motion.div
-            className="relative 3xl:max-w-screen-3xl mx-auto z-10 h-full flex flex-col text-white xl:grid grid-cols-1 xl:grid-cols-2 justify-end xl:justify-start xl:items-center gap-4 xl:gap-8 pb-24 p-6 xl:pt-72 xl:px-24"
+            className="relative 3xl:max-w-screen-3xl mx-auto z-10 h-full flex flex-col text-white xl:grid grid-cols-1 xl:grid-cols-2 justify-end xl:justify-start xl:items-center gap-4 xl:gap-8 pb-48 xl:pb-12 p-6 xl:pt-72 xl:px-24"
             variants={containerVariants}
           >
             {/* Left Side Content */}

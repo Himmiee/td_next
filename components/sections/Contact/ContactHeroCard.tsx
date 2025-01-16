@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ContactFormComponent } from "@/components/forms/contactForm";
-import { ContactSuccessMessage } from "@/components/sections//Contact/ContactSuccess";
+import  ContactSuccessMessage  from "@/components/sections/Contact/ContactSuccess";
 import { GeneralSectionCard } from "@/components/forms/cards/QuestionCard";
 import { containerVariants, fadeIn } from "@/lib/helpers/helperFuncs";
 import { socialIcons } from "@/lib/helpers/mockData";

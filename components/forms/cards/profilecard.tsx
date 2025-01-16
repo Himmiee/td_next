@@ -94,7 +94,7 @@ export const TeamProfileCard: React.FC<TeamProfileCardProps> = ({
       <motion.div
         variants={imageVariants}
         whileHover="hover"
-        className="relative w-full xl:w-[320px] h-[400px] xl:h-auto flex-shrink-0 group"
+        className="relative w-full xl:w-[320px]  h-[400px] xl:h-auto flex-shrink-0 group"
       >
         <motion.div className="rounded-lg overflow-hidden relative h-full">
           <Image
@@ -111,7 +111,7 @@ export const TeamProfileCard: React.FC<TeamProfileCardProps> = ({
             className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center text-white p-4 xl:hidden"
           >
             <motion.p
-              initial={{ y: 10, opacity: 0 }}
+              initial={{ y: 10, opacity: 1 }}
               whileHover={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3 }}
               className="text-sm mt-2"
