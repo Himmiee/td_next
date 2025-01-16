@@ -40,7 +40,7 @@ const Projects = () => {
   console.log(projects);
 
   return (
-    <section className=" my-24 lg:px-[6.5rem]">
+    <section className=" my-10 lg:px-[6.5rem]">
       {/* Header Section */}
 
       {pathname !== "/projects" && (
