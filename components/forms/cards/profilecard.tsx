@@ -113,7 +113,7 @@ export const TeamProfileCard: React.FC<TeamProfileCardProps> = ({
             <motion.p
               initial={{ y: 10, opacity: 0}}
               whileHover={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0 }}
+              transition={{ duration: 0.1 }}
               className="text-sm mt-2"
             >
               {description}
