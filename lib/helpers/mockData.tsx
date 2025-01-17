@@ -170,17 +170,17 @@ export const accordionItems = [
   {
     title: "What kind of support can I expect from instructors?",
     content:
-      "Synergyy is Africa’s Talent Cloud, connecting startups and businesses with elite African tech talent. We handle everything from talent acquisition and management to payroll, making it seamless for companies to hire top professionals across borders and focus on growth.",
+      "Our instructors provide personalized mentorship, resume reviews, job search strategies, and lifetime access to a supportive community. You’ll also benefit from customized learning plans, guest lectures, and exclusive workshops to guide your product management journey.",
   },
   {
-    title: "How do I Enrol in a course?",
+    title: "How to Enroll in a Course",
     content:
-      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
+      "Select your course, enroll online, and join our active WhatsApp learning community. All courses are 100% online, allowing you to learn at your own pace. Contact us for more details and personalized guidance from a representative.",
   },
   {
-    title: "How long do the courses take?",
+    title: "What is the duration of the courses?",
     content:
-      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+      "Each course runs for six weeks. Complex concepts are simplified into digestible modules, making learning accessible for all backgrounds. By the end, you’ll be ready to step confidently into your new tech career.",
   },
   {
     title: "Will I get a certificate after completing a course?",
@@ -188,14 +188,19 @@ export const accordionItems = [
       "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
   },
   {
-    title: "Do you offer job placement assistance?",
+    title: "Will I Get a Certificate After Completing a Course?",
     content:
-      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
+      "Yes! You’ll earn a Certificate of Completion to showcase your skills and achievements. Use it to enhance your professional profile and demonstrate your expertise to potential employers.",
   },
   {
-    title: "How much do the courses cost?",
+    title: "Job Placement Assistance",
     content:
-      "Every professional on Synergyy goes through a rigorous vetting process, including skill assessments, experience verification, and soft skills evaluation. We ensure that only the most qualified individuals make it onto our platform so that you get the best fit for your needs.",
+      "While we don’t offer direct placements, we empower you with skills to land your dream role. Learn CV writing, job search strategies, and interview techniques to confidently secure your next opportunity.",
+  },
+  {
+    title: "How Much Do the Courses Cost?",
+    content:
+      "Each course costs ₦50,000 ($30). It’s an affordable investment in your tech career with practical skills to set you up for success.",
   },
 ];
 
