@@ -56,7 +56,7 @@ const SidebarComponent = ({ isMenuOpen, toggleMenu }: SidebarProps) => {
             <Button
               variant={"default"}
               size="lg"
-              className="text-base bg-YellowBtnColor border border-YellowBtnColor"
+              className="text-base  bg-YellowBtnColor border border-YellowBtnColor"
               onClick={() => {
                 toggleMenu();
                 router.push("/Contact");

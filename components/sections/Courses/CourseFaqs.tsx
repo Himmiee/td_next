@@ -9,7 +9,7 @@ export const CourseFaqs = () => {
         <div className="text-2xl text-[#262626] font-medium">
           Course Outline
         </div>
-        <Accordion items={coursesFaqs} width="w-full" />
+        <Accordion items={coursesFaqs} isCourses={true} width="w-full" />
       </div>
     </section>
   );
