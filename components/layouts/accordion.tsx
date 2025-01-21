@@ -55,11 +55,14 @@ const Accordion: React.FC<AccordionProps> = ({
             } overflow-hidden`}
           >
             {isCourses ? (
-              <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                {item.content.split("\n").map((bullet, i) => (
-                  <li key={i}>{bullet.trim()}</li>
-                ))}
-              </ul>
+              <section className="space-y-4">
+                <p className="text-gray-600 ">{item?.info}</p>
+                <ul className="list-disc pl-6 text-gray-600 space-y-2">
+                  {item.content.split("\n").map((bullet, i) => (
+                    <li key={i}>{bullet.trim()}</li>
+                  ))}
+                </ul>
+              </section>
             ) : (
               <div className="text-gray-600">{item.content}</div>
             )}
