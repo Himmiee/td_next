@@ -25,7 +25,7 @@ export const CourseSection = () => {
           {/* Left Side Content */}
           <div className=" xl:text-left">
             <p className="text-3xl  text-center xl:text-[56px] font-medium">
-              Project Management Program
+              Product Management Program
             </p>
           </div>
         </div>

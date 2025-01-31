@@ -42,4 +42,5 @@ export type InputVariant =
 export interface AccordionItem {
   title: string;
   content: string;
+  info?: string;
 }
