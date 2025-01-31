@@ -13,18 +13,18 @@ export const CoursesSection = () => {
       variants={containerCourseVariants}
       initial="hidden"
       animate="visible"
-      className="xl:h-[650px] 3xl:max-w-screen-3xl mx-auto px-4 pb-6 xl:pb-0 flex flex-col items-center space-y-8 pt-10"
+      className="xl:h-[700px] 3xl:max-w-screen-3xl mx-auto px-4 pb-6 xl:pb-0 flex flex-col items-center space-y-8 pt-10"
     >
       <motion.div variants={textCourseVariants} className="space-y-3">
         <motion.div
           variants={textCourseVariants}
-          className="text-[36px] text-center font-semibold"
+          className="text-[36px] text-start md:text-center font-semibold"
         >
           Our Courses
         </motion.div>
         <motion.p
           variants={textCourseVariants}
-          className="text-[#59595A] text-center max-w-3xl"
+          className="text-[#59595A] text-start md:text-center max-w-3xl"
         >
           Our courses are designed to help you master in-demand skills. With
           expert-led training and hands-on learning, you&apos;ll gain the
@@ -32,7 +32,7 @@ export const CoursesSection = () => {
         </motion.p>
       </motion.div>
 
-      <motion.div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 justify-items-center w-full">
+      <motion.div className="w-full flex justify-center items-center">
         {coursesData.map((item, index) => (
           <motion.div
             key={index}
@@ -46,6 +46,7 @@ export const CoursesSection = () => {
           >
             <CoursesCard
               icon={item.icon}
+              iconBg={item.iconBg}
               title={item.title}
               description={item.description}
             />

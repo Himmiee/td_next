@@ -34,7 +34,7 @@ export const ContactFormComponent = ({ setStep }: ContactFormProps) => {
     mode: "onChange",
     shouldFocusError: true,
   });
-  // // const { mutate, isError, isSuccess, error, isPending } = useContact();
+  // const { mutate, isError, isSuccess, error, isPending } = useContact();
   const onSubmit = (values: unknown) => {
     console.log(values);
     setStep(1);

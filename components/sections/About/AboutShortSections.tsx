@@ -37,7 +37,7 @@ export const AboutEndSection = () => {
             alt="Background Logo Right"
             className="rounded-full"
           />
-          <p className=" text-[13px] font-semibold">Naomi Destiny</p>
+          <p className=" text-[13px] font-semibold">Esther Daniels</p>
           <p className=" text-[13px]">Founder, Techdive</p>
         </div>
       </section>

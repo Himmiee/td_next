@@ -102,7 +102,7 @@ export const FooterComponent = () => {
         {/* Copyright text */}
         <motion.div variants={itemVariants}>
           <p className="text-[#CBD5E1] text-sm text-center mt-12 ">
-            © Copyright 2024, All Rights Reserved by Tech Dive
+            © Copyright 2025, All Rights Reserved by Tech Dive
           </p>
         </motion.div>
       </div>
