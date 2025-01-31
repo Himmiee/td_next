@@ -34,3 +34,17 @@ export interface ErrorResponse {
   };
   message: string;
 }
+
+export interface ContactFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+export interface ContactFormResponse {
+  success: boolean;
+  message: string;
+  data: ContactFormData;
+}

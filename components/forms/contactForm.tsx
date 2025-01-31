@@ -9,13 +9,13 @@ import { Button } from "@/components/ui/button";
 import { FormTextArea } from "./inputs/TextAreaContainer";
 import PhoneInputField from "./inputs/Phoneinput";
 import { formControls } from "@/lib/helpers/helperFuncs";
-// import { useContact } from "@/lib/queries";
-// import { ErrorResponse } from "@/lib/interface";
-// import { showToast } from "../layouts/Toast";
-// import { useEffect } from "react";
-// import { CgSpinner } from "react-icons/cg";
 import { containerVariants } from "@/lib/helpers/helperFuncs";
 import { socialIcons } from "@/lib/helpers/mockData";
+import { useSubmitContactForm } from "@/lib/queries";
+import toast from "react-hot-toast";
+import { ContactFormData, ErrorResponse } from "@/lib/interface";
+import { useEffect } from "react";
+import { Loader } from "lucide-react";
 
 interface ContactFormProps {
   setStep: React.Dispatch<React.SetStateAction<number>>;
@@ -25,43 +25,37 @@ export const ContactFormComponent = ({ setStep }: ContactFormProps) => {
   const methods = useForm({
     resolver: yupResolver(ContactUsSchema),
     defaultValues: {
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       email: "",
-      phone_number: "",
+      phone: "",
       message: "",
     },
     mode: "onChange",
     shouldFocusError: true,
   });
-  // const { mutate, isError, isSuccess, error, isPending } = useContact();
-  const onSubmit = (values: unknown) => {
-    console.log(values);
-    setStep(1);
-    // mutate(values);
+  const { mutate, isError, isSuccess, error, isPending, data } =
+    useSubmitContactForm();
+  const onSubmit = (values: ContactFormData) => {
+    // console.log(values);
+    mutate(values);
   };
 
   const { handleSubmit } = methods;
 
-  // useEffect(() => {
-  //   if (isError) {
-  //     const typedError = error as ErrorResponse;
-  //     showToast(
-  //       `${typedError.response?.data.message || typedError.message}`,
-  //       "error"
-  //     );
-  //   }
+  useEffect(() => {
+    if (isError) {
+      const typedError = error as ErrorResponse;
+      toast.error(`${typedError.response?.data.message || typedError.message}`);
+    }
 
-  //   if (isSuccess) {
-  //     // showToast(
-  //     //   "Thank you for joining the waitlist! We’ll let you know when TechDive is ready.",
-  //     //   "success"
-  //     // );
-  //     window.scrollTo(0, 0);
-  //     setStep(1);
-  //     methods.reset();
-  //   }
-  // }, [isError, isSuccess, error, methods, setStep]);
+    if (isSuccess) {
+      // toast.success(`${data?.message}`);
+      window.scrollTo(0, 0);
+      setStep(1);
+      methods.reset();
+    }
+  }, [isError, isSuccess, error, methods, setStep]);
   const socialIconVariants = {
     hover: { scale: 1.2, rotate: 360 },
     transition: { type: "spring", stiffness: 300 },
@@ -85,7 +79,7 @@ export const ContactFormComponent = ({ setStep }: ContactFormProps) => {
             >
               <CustomInput
                 isFormInput={true}
-                name="first_name"
+                name="firstName"
                 label="First name"
                 required
                 type="Firstname"
@@ -94,7 +88,7 @@ export const ContactFormComponent = ({ setStep }: ContactFormProps) => {
               />
               <CustomInput
                 isFormInput={true}
-                name="last_name"
+                name="lastName"
                 label="Last name"
                 required
                 type="Lastname"
@@ -122,7 +116,7 @@ export const ContactFormComponent = ({ setStep }: ContactFormProps) => {
 
             <motion.div variants={formControls} initial="visible" custom={2}>
               <PhoneInputField
-                name="phone_number"
+                name="phone"
                 label="Phone"
                 required={true}
                 placeholder="Enter your phone number"
@@ -155,11 +149,11 @@ export const ContactFormComponent = ({ setStep }: ContactFormProps) => {
               className="w-full mt-6 bg-YellowBtnColor text-white"
               type="submit"
             >
-              {/* {isPending ? (
-                <CgSpinner className="animate-spin w-full text-lg" />
-              ) : ( */}
-              Contact Us
-              {/* // )} */}
+              {isPending ? (
+                <Loader className="animate-spin w-full text-lg" />
+              ) : (
+                "Contact Us"
+              )}
             </Button>
             <div className="space-y-3 xl:hidden">
               <p className="text-[12px] text-center font-medium">
