@@ -6,7 +6,7 @@ import { ContactFormComponent } from "@/components/forms/contactForm";
 import { GeneralSectionCard } from "@/components/forms/cards/QuestionCard";
 import { containerVariants, fadeIn } from "@/lib/helpers/helperFuncs";
 import { socialIcons } from "@/lib/helpers/mockData";
-import { ContactSuccessMessage } from "./ContactSuccess";
+import ContactSuccessMessage from "./ContactSuccess";
 
 export const ContactHeroSection = () => {
   const [step, setStep] = useState<number>(0);
