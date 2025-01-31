@@ -4,6 +4,7 @@ import { MdArrowOutward } from "react-icons/md";
 
 type IconProps = {
   icon: React.ReactNode | StaticImageData;
+  iconBg?: React.ReactNode | StaticImageData;
   title: string;
   description: string;
 };
@@ -63,14 +64,26 @@ export const CustomInfoCard = ({ icon, title, description }: IconProps) => {
   );
 };
 
-export const CoursesCard = ({ icon, title, description }: IconProps) => {
+export const CoursesCard = ({
+  icon,
+  title,
+  description,
+  iconBg,
+}: IconProps) => {
   return (
-    <section className="flex flex-col items-start p-4 xl:p-6 w-full max-w-sm space-y-2">
-      <div className="flex mt-4">
-        <Image src={icon as StaticImageData} alt="i" />
+    <section className="flex flex-col items-start py-3 md:pt-6  w-full   space-y-7">
+      <div className="flex mt-4 w-full ">
+        <Image src={icon as StaticImageData} alt="i" className=" md:hidden" />
+        <Image
+          src={iconBg as StaticImageData}
+          alt="i"
+          className="hidden md:flex"
+        />
       </div>
-      <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-      <p className="text-[#565A5B] xl:text-lg mt-2 ">{description}</p>
+      <div className="space-y-2">
+        <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+        <p className="text-[#565A5B] xl:text-lg mt-2 ">{description}</p>
+      </div>
     </section>
   );
 };

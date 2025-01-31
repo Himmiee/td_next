@@ -1,3 +1,4 @@
+import { EventSection } from "./Events";
 import { FAQComponent } from "./Faq";
 import { HomeHeroSection } from "./HomeHero";
 import { CoursesSection, DiveSection } from "./OurCourses";
@@ -11,6 +12,7 @@ export const HomeComponent = () => {
       <TechDiveComponent />
       <TechDiveServiceComponent />
       <CoursesSection />
+      <EventSection />
       <DiveSection />
       <FAQComponent />
     </section>

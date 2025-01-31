@@ -17,8 +17,9 @@ import talentImg from "@/app/assets/png/icons/TalentAquisition.png";
 import consultingImg from "@/app/assets/png/icons/consulting.png";
 import communityImg from "@/app/assets/png/icons/communitysupport.png";
 import productImg from "@/app/assets/png/productdesign.png";
-import uiuxImg from "@/app/assets/png/uiux.png";
-import analyticsIng from "@/app/assets/png/analyics.png";
+import productImgBg  from "@/app/assets/png/pm.png";
+// import uiuxImg from "@/app/assets/png/uiux.png";
+// import analyticsIng from "@/app/assets/png/analyics.png";
 import imgOne from "@/app/assets/png/img-one.png";
 import imgTwo from "@/app/assets/png/imgg-two.png";
 import imgThree from "@/app/assets/png/img-three.png";
@@ -27,6 +28,8 @@ import imageOne from "@/app/assets/png/about/image-1.png";
 import imageTwo from "@/app/assets/png/about/image-2.png";
 import imageThree from "@/app/assets/png/about/image-3.png";
 import imageFour from "@/app/assets/png/about/image-4.png";
+import { RiTiktokFill } from "react-icons/ri";
+import { BsWhatsapp } from "react-icons/bs";
 import { StaticImageData } from "next/image";
 
 interface MockDataItem {
@@ -89,6 +92,16 @@ export const socialIcons: ISocialIcons[] = [
     name: "LinkedIn",
     route: "https://www.linkedin.com/company/#",
   },
+  {
+    icon: RiTiktokFill,
+    name: "Tiktok",
+    route: "https://www.tiktok.com/@techdive_?_t=ZM-8tRS7OyjFVl&_r=1",
+  },
+  {
+    icon: BsWhatsapp,
+    name: "LinkedIn",
+    route: "https://wa.me/2347078358313",
+  },
 ];
 
 export const ourServicesData = [
@@ -145,20 +158,21 @@ export const ourServicesData = [
 export const coursesData = [
   {
     icon: productImg,
+    iconBg: productImgBg,
     title: "Product Management",
     description:
       "Become a certified Product Manager and lead successful projects.",
   },
-  {
-    icon: uiuxImg,
-    title: "UX/UI Design",
-    description: "Learn to create user-friendly designs that stand out.",
-  },
-  {
-    icon: analyticsIng,
-    title: "Data Analytics",
-    description: "Gain insights and make data-driven decisions.",
-  },
+  // {
+  //   icon: uiuxImg,
+  //   title: "UX/UI Design",
+  //   description: "Learn to create user-friendly designs that stand out.",
+  // },
+  // {
+  //   icon: analyticsIng,
+  //   title: "Data Analytics",
+  //   description: "Gain insights and make data-driven decisions.",
+  // },
 ];
 
 export const bulletPoints = [

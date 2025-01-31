@@ -1,5 +1,5 @@
 "use client";
-import { QuestionCard } from "@/components/forms/cards/QuestionCard";
+// import { QuestionCard } from "@/components/forms/cards/QuestionCard";
 import Accordion from "@/components/layouts/accordion";
 import { accordionItems } from "@/lib/helpers/mockData";
 import { motion, AnimatePresence } from "framer-motion";
@@ -83,14 +83,14 @@ export const FAQComponent = () => {
           </AnimatePresence>
 
           {/* QuestionCard */}
-          <AnimatePresence>
+          {/* <AnimatePresence>
             <motion.div
               className="w-full flex justify-center items-center"
               variants={itemVariants}
             >
               <QuestionCard />
             </motion.div>
-          </AnimatePresence>
+          </AnimatePresence> */}
 
           {/* Accordion */}
           <AnimatePresence>

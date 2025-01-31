@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ContactFormComponent } from "@/components/forms/contactForm";
-import  ContactSuccessMessage  from "@/components/sections/Contact/ContactSuccess";
 import { GeneralSectionCard } from "@/components/forms/cards/QuestionCard";
 import { containerVariants, fadeIn } from "@/lib/helpers/helperFuncs";
 import { socialIcons } from "@/lib/helpers/mockData";
+import ContactSuccessMessage from "./ContactSuccess";
 
 export const ContactHeroSection = () => {
   const [step, setStep] = useState<number>(0);
@@ -44,13 +44,11 @@ export const ContactHeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
-            Have something to say or a suggestion?{" "}
-            <br className="xl:hidden" /> Send us a message
+            Have something to say or a suggestion? <br className="xl:hidden" />{" "}
+            Send us a message
           </motion.p>
           <div className="space-y-3 mt-4 hidden xl:block">
-            <p className="text-sm font-medium">
-              Follow us on Social Media
-            </p>
+            <p className="text-sm font-medium">Follow us on Social Media</p>
             <motion.div
               className="flex space-x-3 pb-12 xl:pb-0"
               variants={containerVariants}
