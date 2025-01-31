@@ -44,3 +44,4 @@ export interface AccordionItem {
   content: string;
   info?: string;
 }
+

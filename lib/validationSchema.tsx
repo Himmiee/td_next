@@ -38,10 +38,10 @@ const combineMultipleSchemas = (
 };
 export const ContactUsSchema = combineMultipleSchemas(
   yup.object({
-    first_name: yup.string().required("Firstname is required"),
-    last_name: yup.string().required("Lastname is required"),
+    firstName: yup.string().required("Firstname is required"),
+    lastName: yup.string().required("Lastname is required"),
     message: yup.string().required("Message is required"),
-    phone_number: yup
+    phone: yup
       .string()
       .required("Phone Number is required")
       .min(8, "Enter a valid phone number"),
