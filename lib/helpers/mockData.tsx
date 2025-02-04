@@ -197,11 +197,6 @@ export const accordionItems = [
       "Each course runs for six weeks. Complex concepts are simplified into digestible modules, making learning accessible for all backgrounds. By the end, you’ll be ready to step confidently into your new tech career.",
   },
   {
-    title: "Will I get a certificate after completing a course?",
-    content:
-      "Synergyy provides access to a broad range of tech talent, including software developers, data scientists, product managers, UX/UI designers, cybersecurity experts, and more. Our network includes highly skilled professionals ready to help you achieve your growth and innovation goals.",
-  },
-  {
     title: "Will I Get a Certificate After Completing a Course?",
     content:
       "Yes! You’ll earn a Certificate of Completion to showcase your skills and achievements. Use it to enhance your professional profile and demonstrate your expertise to potential employers.",
